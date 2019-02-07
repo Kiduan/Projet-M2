@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Noureddine ADJOU" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title -->
+    <title>Démasquer le sucre</title>
+
+    <!-- Css Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+  </head>
+<h2>Démasquer le sucre</h2>
+
+<form onsubmit="authentification" method="post" id="form">
+  Adresse mail<br>
+  <input type="text" name="mail" id="mail">
+  <br>
+ Mot de passe<br>
+  <input type="password" name="motDePasse" id="motDePasse" >
+  <br><br>
+  <input type="submit" value="Submit" >
+  
+</form> 
+<div id="status"></div>
+<script src="js/jquery.js"></script>
+
+</script>
+<script >
+
+
+$("#form").submit(function(e) {
+
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+           type: "POST",
+           url: 'http://172.31.4.105/authentification.php',
+           data: form.serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+			  /*Selon data on se redérecte vers l'accueil*/
+				alert("Connexion !");
+				window.location.replace("accueil.html");			
+			   // alert(data.localeCompare("root1234adj"));
+			   //if(data.localeCompare("root1234adj")==0)
+               
+			
+				   
+           }
+         });
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+});
+ app.initialize();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "_from": "cordova-plugin-file-transfer@~1.5.0",
+  "_from": "cordova-plugin-file-transfer@~1.5.1",
   "_id": "cordova-plugin-file-transfer@1.5.1",
   "_inBundle": false,
   "_integrity": "sha1-z5tjTo8yg0goAstfCzgdQPVGU5g=",
@@ -8,12 +8,12 @@
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-file-transfer@~1.5.0",
+    "raw": "cordova-plugin-file-transfer@~1.5.1",
     "name": "cordova-plugin-file-transfer",
     "escapedName": "cordova-plugin-file-transfer",
-    "rawSpec": "~1.5.0",
+    "rawSpec": "~1.5.1",
     "saveSpec": null,
-    "fetchSpec": "~1.5.0"
+    "fetchSpec": "~1.5.1"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-file-transfer/-/cordova-plugin-file-transfer-1.5.1.tgz",
   "_shasum": "cf9b634e8f3283482802cb5f0b381d40f5465398",
-  "_spec": "cordova-plugin-file-transfer@~1.5.0",
+  "_spec": "cordova-plugin-file-transfer@~1.5.1",
   "_where": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer Le Sucre",
   "author": {
     "name": "Apache Software Foundation"
