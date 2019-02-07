@@ -65,7 +65,7 @@ function lireDonneePost($nomDonnee, $valDefaut="") {
 }
 
 /** 
- * Vérifie si les données saisies par l'utilisateur correspondent à un compte connu
+ * Vérifie si les données saisies par l'utilisateur admin correspondent à un compte connu
  *
  * Retourne 0 si oui 1 sinon 
  * @param PdoBDD l'instance de PDO qui est sollicitée par toutes les méthodes de la classe PdoBDD
@@ -76,6 +76,30 @@ function lireDonneePost($nomDonnee, $valDefaut="") {
 function verifUser($pdoExetud, $user, $mdp) {
     $tabNom = $pdoExetud->recupBdd("nom", "admin");
     $tabMdp = $pdoExetud->recupBdd("mdp", "admin");
+    $i=0;
+    foreach($tabNom as $verifNom)   {
+        if ($verifNom[0]==$user)    {
+                if (checkPassword($pdoExetud,$mdp,$tabMdp[$i]['mdp']))
+                    return 0;//True
+                else return 1;//False
+        }
+        $i++;
+    }
+    return 1;//False
+}
+
+/** 
+ * Vérifie si les données saisies par l'utilisateur client correspondent à un compte connu
+ *
+ * Retourne 0 si oui 1 sinon 
+ * @param PdoBDD l'instance de PDO qui est sollicitée par toutes les méthodes de la classe PdoBDD
+ * @param string nom donné par l'utilisateur
+ * @param string mdp valeur du mot de passe rentré par l'utilisateur 
+ * @return 1 si le compte n'ai pas connu 0 sinon
+ */ 
+function verifUser_client($pdoExetud, $user, $mdp) {
+    $tabNom = $pdoExetud->recupBdd("email", "client");
+    $tabMdp = $pdoExetud->recupBdd("mdp", "client");
     $i=0;
     foreach($tabNom as $verifNom)   {
         if ($verifNom[0]==$user)    {
@@ -112,7 +136,7 @@ function checkPassword($pdoExetud,$nv_mdp,$interne){
  * @return 0 s'ils correspondent 1 sinon
  */ 
 function verifMail($pdoExetud, $email) {
-    $tabemail = $pdoExetud->recupBdd("Email", "utilisateur");
+    $tabemail = $pdoExetud->recupBdd("Email", "client");
     foreach($tabemail as $verif)   {
         if ($verif[0]==$email)    
             return 0;//true

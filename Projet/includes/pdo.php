@@ -61,7 +61,7 @@ class PdoBDD{
      * @return array liste obtenue
      */
     public function recupListe($id, $tri, $ordre) {//recup all avec where id=$id
-        $req = "SELECT  serial,client,admin_etablissement,etat,statut,date_fin_garantie_reelle FROM frogi_client_distri WHERE Id='" .$id. "' ORDER BY " .$tri. " " .$ordre;
+        $req = "SELECT  nom,email,date_inscription,vip,temps FROM client ORDER BY " . $tri . " " .  $ordre;
         $cmd = $this->monPdo->query($req);
         $liste = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
         $cmd->closeCursor();
@@ -69,7 +69,7 @@ class PdoBDD{
     }
     
     /** 
-     * recupère l'id de l'utilisateur connecté                    
+     * recupère l'id de l'utilisateur admin connecté                    
      * 
      * envoie une requete sql pour recupérer l'id de l'utilisateur connecté (on vérifie par rapport au nom)
      * @param string nom nom de compte de l'utilisateur connecté
@@ -81,6 +81,22 @@ class PdoBDD{
         $id = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
         $cmd->closeCursor();
         return $id[0]['admin_id'];
+    }
+    
+        
+    /** 
+     * recupère l'id de l'utilisateur client connecté                    
+     * 
+     * envoie une requete sql pour recupérer l'id de l'utilisateur connecté (on vérifie par rapport au nom)
+     * @param string nom nom de compte de l'utilisateur connecté
+     * @return string id de l'utilisateur connecté
+     */
+    public function recupId_client($email)   {
+        $req = "SELECT client_id FROM client WHERE email='" .$email. "'";
+        $cmd = $this->monPdo->query($req);
+        $id = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
+        $cmd->closeCursor();
+        return $id[0]['client_id'];
     }
     
     /** 
@@ -98,52 +114,55 @@ class PdoBDD{
      * @param string Rmodel model du boitier que l'on recherche
      * @return array tab liste obtenue
      */
-    public function recupRecherche($id, $tri, $ordre ,$Rnom,$Retab,$Rserial,$RdateI,$RdateS,$Retat,$Rmodel) {
+    public function recupRecherche($tri, $ordre ,$Rnom,$Remail,$Rvip,$RdateI,$RdateS,$Rtemps,$Ritemps) {
         if ($Rnom == "")
             $Nom='""';
-        else $Nom="client";
-        if ($Retab=="")
-            $Etab='""';
-        else $Etab="admin_etablissement";
-        if ($Rserial == "")
-            $Serial='""';
-        else $Serial="serial";
+        else $Nom="nom";
+        if ($Remail=="")
+            $Email='""';
+        else $Email="email";
+        if ($Rvip == "")
+            $Vip='""';
+        else $Vip="vip";
         if ($RdateI == "")
             $DateI ='""';
-        else $DateI = "date_fin_garantie";
+        else $DateI = "date_inscription";
         if ($RdateS == "")
             $DateS ='""';
-        else $DateS = "date_fin_garantie";
-        if ($Retat == "all"){
-            $Etat='""';
-            $Retat="";
-        }else $Etat="etat";
-        if ($Rmodel == "all"){
-            $Model='""';
-            $Rmodel="";
-        }else $Model="serial";
-        $req = "SELECT  serial,client,admin_etablissement,etat,statut,date_fin_garantie FROM frogi_client_distri 
-        WHERE Id='".$id."' AND ".$Nom." LIKE '".$Rnom."%' AND ".$Etab." LIKE '".$Retab."%' AND ".$Serial." LIKE '%".$Rserial."%' ";
+        else $DateS = "date_inscription";
+        if ($Rtemps == ""){
+            $Temps='""';
+        }else $Temps="temps";
+       
+        $req = "SELECT  nom,email,date_inscription,vip,temps FROM client 
+        WHERE ".$Nom." LIKE '%".$Rnom."%' AND ".$Email." LIKE '".$Remail."%' AND ".$Vip." LIKE '".$Rvip."' ";
         if ($DateI!='""')
             $req .= "AND ".$DateI." >= '".$RdateI."' ";
         if ($DateS!='""')
             $req .="AND ".$DateI." <= '".$RdateS."' ";
-        $req .= "AND ".$Etat." LIKE '".$Retat."%' AND ".$Model." LIKE '".$Rmodel."%' ORDER BY " .$tri. " ".$ordre;
+        if ($Rtemps != "" && $Ritemps==""){
+            $req .= "AND ".$Temps."='".$Rtemps."' ORDER BY " .$tri. " ".$ordre;
+        }else if ($Rtemps=="" && $Ritemps!="") {
+            $req .= " ORDER BY " .$tri. " ".$ordre;
+        }else if ($Rtemps=="" && $Ritemps=="") {
+             $req .= " ORDER BY " .$tri. " ".$ordre;
+        }else  $req .= "AND ".$Temps.$Ritemps."'".$Rtemps."' ORDER BY " .$tri. " ".$ordre;
         $cmd = $this->monPdo->query($req);
+        //echo $req;
         $tab = $cmd->fetchAll();
         $cmd->closeCursor();
         return $tab;
     }
     
     /** 
-     * recupère les info principal du boitier du client                   
+     * recupère les info principal du client                   
      * 
-     * @param string id l'utilisateur connecté
-     * @param string serial numéro de serie du boitier
+     * @param string id de l'utilisateur connecté
+     * @param string email de l'utilisateur connecté
      * @return array liste obtenu
      */
-    public function recupInfo($id, $serial)   {
-        $req = "SELECT * FROM frogi_client_distri WHERE Id='".$id."' AND serial='".$serial."'";
+    public function recupInfo_client($id, $email)   {
+        $req = "SELECT * FROM frogi_client_distri WHERE Id='".$id."' AND email='".$email."'";
         $cmd = $this->monPdo->query($req);
         $info = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
         $cmd->closeCursor();
@@ -183,7 +202,7 @@ class PdoBDD{
     }
     
     /** 
-     * recupère une information d'un client ou d'un utilisateur                  
+     * recupère une information d'un admin ou d'un utilisateur                  
      * 
      * @param string info information que l'on recherche
      * @param string bdd nom de la table où on recherche des informations
@@ -192,6 +211,23 @@ class PdoBDD{
      */
     public function recupUtilisateur($info, $bdd,$id) {
         $req = "SELECT ".$info." FROM ".$bdd." WHERE admin_id='".$id."'";
+        $cmd = $this->monPdo->query($req);
+        $recup = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
+        $cmd->closeCursor();
+        if($recup)
+            return $recup[0][$info];
+    }
+    
+        /** 
+     * recupère une information d'un client ou d'un utilisateur                  
+     * 
+     * @param string info information que l'on recherche
+     * @param string bdd nom de la table où on recherche des informations
+     * @param string id id de l'utilisateur dont on recherche des informations
+     * @return array liste obtenu
+     */
+    public function recupUtilisateur_client($info, $bdd,$id) {
+        $req = "SELECT ".$info." FROM ".$bdd." WHERE client_id='".$id."'";
         $cmd = $this->monPdo->query($req);
         $recup = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
         $cmd->closeCursor();

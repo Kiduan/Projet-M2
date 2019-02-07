@@ -27,74 +27,9 @@
             <div class="login-box-field"><input name="nom" class="form-login-admin" title="utilisateur:" size="30" maxlength="30" required=""></div><br>
             <div class="login-box-name">mot de passe:</div>
             <div class="login-box-field"><input name="mdp" class="form-login-admin" title="mot de passe:" value="" size="30" required="" maxlength="30" type="password"></div>
-            <div><input class="box_submit" name="submit" value="connexion" type="submit"></div><br><br>
-            <span class="js-btn btn mdp_oublier">Mot de passe oublié ?</span>
+            <div><input class="box_submit" name="submit" value="connexion" type="submit"></div><br><br>     
                 </div>
             </div>
 		</div>
 
 <div id="footer">Isen Brest - 2019 - © Tous droits réservés</div>
-</form>
-<form method="post" action="controleurs/c_connection.php?mdp=oublie">
-       <div class="js-fade is-hidden" style="opacity: -0.1; display: none;"><!--div cacher pour la réinitialisation du mpd-->
-                    <div class="fenMdp" id="idcontact">
-                            <div class="text_mdp"> Indiquer votre email pour recevoir votre nouveau mot de passe</div>
-                            <input name="email" value="" title="email:" class ="inputmail" size="20" >
-                            <input class="boutonmdp" name="submit" value="Nouveau mot de passe" type="submit">
-                    </div>
-        	</div>
-    </form>
-<script>
-      // fade out
-
-function fadeOut(el){
-  el.style.opacity = 1;
-
-  (function fade() {
-    if ((el.style.opacity -= .1) < 0) {
-      el.style.display = 'none';
-      el.classList.add('is-hidden');
-    } else {
-      requestAnimationFrame(fade);
-    }
-  })();
-}
-
-// fade in
-
-function fadeIn(el, display){
-  if (el.classList.contains('is-hidden')){
-    el.classList.remove('is-hidden');
-  }
-  el.style.opacity = 0;
-  el.style.display = display || "block";
-
-  (function fade() {
-    var val = parseFloat(el.style.opacity);
-    if (!((val += .1) > 1)) {
-      el.style.opacity = val;
-      requestAnimationFrame(fade);
-    }
-  })();
-}
-
-var btn = document.querySelector('.js-btn');
-var el = document.querySelector('.js-fade');
-
-btn.addEventListener('click', function(e){
-  if(el.classList.contains('is-hidden')){
-    fadeIn(el);
-  }
-  else {
-    fadeOut(el);
-  }
-});
-      //# sourceURL=pen.js
-    </script>
-
-    
-    <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>

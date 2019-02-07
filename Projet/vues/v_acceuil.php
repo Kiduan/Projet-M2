@@ -10,7 +10,7 @@
     /* Cette page liste dans un tableau tout les clients liés à*/
     /* l'utilisateur connecté.                                 */
     /* ------------------------------------------------------- */-->
-<div class="acceuil">    <table class="table-fill">
+<div class="acceuil">   <form  method="post" action="index.php?uc=coupons"> <table class="table-fill">
 <?php
             $ordre=lireDonneeUrl('ordre');
              echo"<tr class='hov'><thead>";
@@ -21,89 +21,109 @@
         */
         if ($ordre != "")   {
             switch($_SESSION['Tri'])    {
-                case 'client': 
-                    if ($ordre == "ASC")
-                        echo "<th class='text-left' ><a href='index.php?tri=client&ordre=DESC'>Client</a></th>";
-                    else echo "<th class='text-left' ><a href='index.php?tri=client&ordre=ASC'>Client</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=serial&ordre=ASC'>Serial</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=admin_etablissement&ordre=ASC'>Etablissement</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=etat&ordre=ASC'>Etat</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=statut&ordre=ASC'>Statut</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=date_fin_garantie_reelle&ordre=ASC'>Date de fin de garantie</a></th>";
+                case 'nom': 
+                    if ($ordre == "ASC"){
+                        echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=DESC'>Nom</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=email&ordre=ASC'>Email</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=date_inscription&ordre=ASC'>Date d'inscription</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=vip&ordre=ASC'>VIP</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=temps&ordre=ASC'>Temps</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=DESC'>Mot de passe</a></th>";
+                        echo "<th class='text-left' ><input type='submit' value='Coupons' class='boxRrecherche'/></th>";
+                    }  
+                    else {
+                        echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Nom</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=email&ordre=ASC'>Email</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=date_inscription&ordre=ASC'>Date d'inscription</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=vip&ordre=ASC'>VIP</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=temps&ordre=ASC'>Temps</a></th>";
+                        echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Mot de passe</a></th>";
+                        echo "<th class='text-left' ><input type='submit' value='Coupons' class='boxRrecherche'/></th>";
+                    }
                     break;
-                case 'serial':
-                    echo "<th class='text-left' ><a href='index.php?tri=client&ordre=ASC'>Client</a></th>";
+                case 'email':
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Nom</a></th>";
                     if ($ordre == "ASC")
-                            echo "<th class='text-left' ><a href='index.php?tri=serial&ordre=DESC'>Serial</a></th>";
-                    else echo "<th class='text-left' ><a href='index.php?tri=serial&ordre=ASC'>Serial</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=admin_etablissement&ordre=ASC'>Etablissement</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=etat&ordre=ASC'>Etat</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=statut&ordre=ASC'>Statut</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=date_fin_garantie_reelle&ordre=ASC'>Date de fin de garantie</a></th>";
+                            echo "<th class='text-left' ><a href='index.php?tri=email&ordre=DESC'>Email</a></th>";
+                    else echo "<th class='text-left' ><a href='index.php?tri=email&ordre=ASC'>Email</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=date_inscription&ordre=ASC'>Date d'inscription</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=vip&ordre=ASC'>VIP</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=temps&ordre=ASC'>Temps</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Mot de passe</a></th>";
+                    echo "<th class='text-left' ><input type='submit' value='Coupons' class='boxRrecherche'/></th>";
                     break;
-                case 'admin_etablissement':
-                    echo "<th class='text-left' ><a href='index.php?tri=client&ordre=ASC'>Client</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=serial&ordre=ASC'>Serial</a></th>";
+                case 'date_inscription':
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Nom</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=email&ordre=ASC'>Email</a></th>";
                     if ($ordre == "ASC")
-                            echo "<th class='text-left' ><a href='index.php?tri=admin_etablissement&ordre=DESC'>Etablissement</a></th>";
-                    else echo "<th class='text-left' ><a href='index.php?tri=admin_etablissement&ordre=ASC'>Etablissement</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=etat&ordre=ASC'>Etat</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=statut&ordre=ASC'>Statut</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=date_fin_garantie_reelle&ordre=ASC'>Date de fin de garantie</a></th>";
+                            echo "<th class='text-left' ><a href='index.php?tri=date_inscription&ordre=DESC'>Date d'inscription</a></th>";
+                    else echo "<th class='text-left' ><a href='index.php?tri=date_inscription&ordre=ASC'>Date d'inscription</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=vip&ordre=ASC'>VIP</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=temps&ordre=ASC'>Temps</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Mot de passe</a></th>";
+                    echo "<th class='text-left' ><input type='submit' value='Coupons' class='boxRrecherche'/></th>";
                     break;
-                case 'etat':
-                    echo "<th class='text-left' ><a href='index.php?tri=client&ordre=ASC'>Client</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=serial&ordre=ASC'>Serial</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=admin_etablissement&ordre=ASC'>Etablissement</a></th>";
+                case 'vip':
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Nom</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=email&ordre=ASC'>Email</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=date_inscription&ordre=ASC'>Date d'inscription</a></th>";
                     if ($ordre == "ASC")
-                            echo "<th class='text-left' ><a href='index.php?tri=etat&ordre=DESC'>Etat</a></th>";
-                    else echo "<th class='text-left' ><a href='index.php?tri=etat&ordre=ASC'>Etat</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=statut&ordre=ASC'>Statut</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=date_fin_garantie_reelle&ordre=ASC'>Date de fin de garantie</a></th>";
+                            echo "<th class='text-left' ><a href='index.php?tri=vip&ordre=DESC'>VIP</a></th>";
+                    else echo "<th class='text-left' ><a href='index.php?tri=vip&ordre=ASC'>VIP</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=temps&ordre=ASC'>Temps</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Mot de passe</a></th>";
+                    echo "<th class='text-left' ><input type='submit' value='Coupons' class='boxRrecherche'/></th>";
                     break;
-                case 'statut':
-                    echo "<th class='text-left' ><a href='index.php?tri=client&ordre=ASC'>Client</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=serial&ordre=ASC'>Serial</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=admin_etablissement&ordre=ASC'>Etablissement</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=etat&ordre=ASC'>Etat</a></th>";
+                case 'temps':
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Nom</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=email&ordre=ASC'>Email</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=date_inscription&ordre=ASC'>Date d'inscription</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=vip&ordre=ASC'>VIP</a></th>";
                     if ($ordre == "ASC")
-                            echo "<th class='text-left' ><a href='index.php?tri=statut&ordre=DESC'>Statut</a></th>";
-                    else echo "<th class='text-left' ><a href='index.php?tri=statut&ordre=ASC'>Statut</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=date_fin_garantie_reelle&ordre=ASC'>Date de fin de garantie</a></th>";
+                            echo "<th class='text-left' ><a href='index.php?tri=temps&ordre=DESC'>Temps</a></th>";
+                    else echo "<th class='text-left' ><a href='index.php?tri=temps&ordre=ASC'>Temps</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Mot de passe</a></th>";
+                    echo "<th class='text-left' ><input type='submit' value='Coupons' class='boxRrecherche'/></th>";
                     break;
-                case 'date_fin_garantie_reelle':
-                    echo "<th class='text-left' ><a href='index.php?tri=client&ordre=ASC'>Client</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=serial&ordre=ASC'>Serial</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=admin_etablissement&ordre=ASC'>Etablissement</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=etat&ordre=ASC'>Etat</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=statut&ordre=ASC'>Statut</a></th>";
-                    if ($ordre == "ASC")
-                            echo "<th class='text-left' ><a href='index.php?tri=date_fin_garantie_reelle&ordre=DESC'>Date de fin de garantie</a></th>";
-                    else echo "<th class='text-left' ><a href='index.php?tri=date_fin_garantie_reelle&ordre=ASC'>Date de fin de garantie</a></th>";
                 }
         }
             else {
-                    echo "<th class='text-left' ><a href='index.php?tri=client&ordre=DESC'>Client</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=serial&ordre=ASC'>Serial</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=admin_etablissement&ordre=ASC'>Etablissement</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=etat&ordre=ASC'>Etat</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=statut&ordre=ASC'>Statut</a></th>";
-                    echo "<th class='text-left' ><a href='index.php?tri=date_fin_garantie_reelle&ordre=ASC'>Date de fin de garantie</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Nom</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=email&ordre=ASC'>Email</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=date_inscription&ordre=ASC'>Date d'inscription</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=vip&ordre=ASC'>VIP</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=temps&ordre=ASC'>Temps</a></th>";
+                    echo "<th class='text-left' ><a href='index.php?tri=nom&ordre=ASC'>Mot de passe</a></th>";
+                    echo "<th class='text-left' ><input type='submit' value='Coupons' class='boxRrecherche'/></th>";
             }
             echo"</tr></thead>";
             echo'<tbody class="table-hover">';
             foreach ($_SESSION['Liste'] as $variable)
             {    
                 echo"<tr class='hov'>";
-                echo "<td class='text-left' >", $variable['client'],"</td>";
-                echo "<td class='text-left' style='min-width:10em;'><a href='index.php?uc=info&serial=", $variable['serial'],"'>", $variable['serial'], "</a></td>";
-                echo "<td class='text-left' >", $variable['admin_etablissement'],"</td>";
-                echo "<td class='text-left' >", $variable['etat'],"</td>";
-                echo "<td class='text-left' >", $variable['statut'],"</td>";
-                echo "<td class='text-left' >", $variable['date_fin_garantie_reelle'],"</td>";
+                echo "<td class='text-left' >", $variable['nom'],"</td>";
+                echo "<td class='text-left' >", $variable['email'],"</td>";
+                echo "<td class='text-left' >", $variable['date_inscription'],"</td>";
+                echo "<td class='text-left' >", $variable['vip'],"</td>";
+                echo "<td class='text-left' >", $variable['temps'],"</td>";
+                echo "<td class='text-left' style='min-width:10em;'><button onclick='renimdp()'>Réinitialiser</button></td>";
+                echo "<td class='text-left' style='min-width:10em;'><input type='checkbox' name='email[]' value='", $variable['email'],"'></td>";
                 echo"</tr>";
             }
             echo"</tbody>";
                      
 ?>
-    </table></div>
+    </table></form></div>
+
+<script>
+function renimdp() {
+  if (confirm("Vous désirez vraiment quitter?")) {
+        <?php
+    //appeler la fonction php pour envoyer un mail et modifier la bdd
+        ?>
+  }
+  else {
+    alert("non")
+  }
+}
+</script>

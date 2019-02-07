@@ -45,7 +45,7 @@ function verif(champ)   {
  * @return false/true Indication si au moin un champ est rempli
  */
 function verifAll(f)    {
- if (f.nom.value != "" || f.etab.value!="" || f.serial.value!="" || f.etat.value!="all" || f.model.value!="all" || f.start_date.value!="")
+ if (f.nom.value != "" || f.email.value!="" || f.temps.value!="" || f.vip.value!="" || f.start_date.value!="")
       return false;
     else return true;
 }
@@ -57,8 +57,8 @@ function verifAll(f)    {
  */
 function verifForm(f)   {
    var nomOk = verif(f.nom);
-   var serialOk = verif(f.serial);
-   var etabOk = verif(f.etab);
+   var emailOk = verif(f.email);
+   var tempsOk = verif(f.temps);
    var dateOk = verif(f.start_date);
    if (verifAll(f)) {
       alert("Veuillez remplir au moins un champ");
@@ -77,11 +77,11 @@ function verifForm(f)   {
  */
 function effacer() {
     document.getElementById('indexnom').value="";
-    document.getElementById('indexetab').value="";
-    document.getElementById('indexserial').value="";
-    document.getElementById('datepicker_debut').value="";
-    document.getElementById('indexetat').value="all";
-    document.getElementById('indexmodel').value="all";
+    document.getElementById('indexemail').value="";
+    document.getElementById('indexdate').value="";
+    document.getElementById('indextemps').value="";
+    document.getElementById('indexvip').value="";
+    //document.getElementById('itemps').value="";
 }
 
 /**

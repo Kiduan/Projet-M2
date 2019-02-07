@@ -10,13 +10,5 @@
     /* Un tri croissant par nom est effectué par défaut.       */
     /* ------------------------------------------------------- */
 
-    $ordre = lireDonneeUrl('ordre');
-    $tri = lireDonneeUrl('tri'); echo $tri;
-    if ($tri)
-        $_SESSION['Tri'] = $tri;
-    if ($_SESSION['Tri'] != "no")   {
-        if ($ordre != "")  
-           $_SESSION['Liste']=$pdoExetud->recupListe($_SESSION['Id'], $_SESSION['Tri'], $ordre);
-        else  $_SESSION['Liste']=$pdoExetud->recupListe($_SESSION['Id'], $_SESSION['Tri'], "ASC");
-    }else    $_SESSION['Liste']=$pdoExetud->recupListe($_SESSION['Id'], "nom", "ASC");//pas de tri donc affichage par defaut
+
 ?>
