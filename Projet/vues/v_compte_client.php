@@ -13,7 +13,7 @@
 
 <div class="titrecentre" style="width: 28%;">Compte</div>
     <div class="fcentre" style="width: 28%;">
-         <form  method="post" action="controleurs/c_compte.php" onsubmit="">
+         <form  method="post" action="controleurs/c_compte_client.php" onsubmit="">
              <?php 
                 //------------Nom--------------- 
                 echo "<label for='Anom' class='param_libelleR'>Nom de compte : </label>";
@@ -22,7 +22,7 @@
                 echo "<label for='nom' class='param_libelleR'>Nouveau nom de compte : </label>";
                 echo '<div class="param_valeurR"><input type="text" name="nom" id="indexnom" onblur="verif(this)"/></div>';
                 echo"<div class='clear'></div>";echo"<div class='espace'></div>"; echo"<div class='clear'></div>";
-                //------------mdp--------------- 
+                //------------email--------------- 
                 echo "<label for='Aemail' class='param_libelleR'>Email : </label>";
                 echo "<label for='Aemail' class='param_valeurR'>", $_SESSION['Email'],"</label>";
                 echo"<div class='clear'></div>";

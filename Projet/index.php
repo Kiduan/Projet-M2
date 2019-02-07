@@ -71,14 +71,11 @@
                 include("vues/v_menu_client.php");
                 $uc = lireDonneeUrl('uc');
                 switch($uc) {
-                        case 'achat' :
-                            /*$_SESSION['Liste']=array(0);//met le tableau à 0 pour qu'il ne s'affiche pas si aucune recherche n'a été lancée
-                            include("controleurs/c_recherche.php");
-                            include("vues/v_recherche.php");
-                            $_SESSION['Tri'] = "no";*/
+                        case 'temps' :
+                            include("vues/v_temps_client.php");
                             break;
                         case 'compte':
-                            include("vues/v_compte.php");
+                            include("vues/v_compte_client.php");
                             switch ($_SESSION['Erreur']) {
                                 case 'oui': echo "<script>alert(\"Modification effectuée\")</script>";   break;
                                 case 'Mdp!=': echo "<script>alert(\"Erreur, mot de passe différent\")</script>";   break;

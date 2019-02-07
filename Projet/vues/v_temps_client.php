@@ -10,18 +10,10 @@
 /* la liste de l'utilisateur connecté                      */
 /* ------------------------------------------------------- */-->
 
-<div class="titrecentre">Coupons</div>
+<div class="titrecentre">Ajout de temps</div>
 
     <div class="fcentre">
-        <?php //--------------------------------------------------
-            if (!empty($_POST['email'])) {
-                $array = $_POST['email'];
-
-                foreach ($array as $selectedval) {
-                    echo 'checkbox de email = '.$selectedval.'</br>';
-                }
-            }//--------------------------------------------------
-        ?>
+    
                      
         <div class='clear'></div>
 </div>

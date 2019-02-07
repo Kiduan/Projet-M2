@@ -21,9 +21,9 @@
     <div id="login">
 		<div class="login_entreprise"><img src="image/logo_V5.png"></div>
 		<div class="login_interface">
-            <div class="administration">administration</div>
+            <div class="administration">connexion</div>
             <div class="login_erreur"></div>
-            <div class="login-box-name">utilisateur:</div>
+            <div class="login-box-name">email:</div>
             <div class="login-box-field"><input name="email" class="form-login-admin" title="utilisateur:" size="30" maxlength="30" required=""></div><br>
             <div class="login-box-name">mot de passe:</div>
             <div class="login-box-field"><input name="mdp" class="form-login-admin" title="mot de passe:" value="" size="30" required="" maxlength="30" type="password"></div>

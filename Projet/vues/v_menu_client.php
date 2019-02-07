@@ -15,13 +15,13 @@
 <!--menu start--> 
 <ul class="menu">
 <li class="li_menu"><a   class="<?php 
-    if (activeMenu("acceuil")==activeMenu("recherche") && activeMenu("acceuil")==activeMenu("contact"))
+    if (activeMenu("acceuil")==activeMenu("temps") && activeMenu("acceuil")==activeMenu("compte"))
         $active="active";
     else $active = activeMenu("acceuil"); 
     echo"$active";?>" href="index.php">Acceuil</a></li>
-  <li class="li_menu"><a   class="<?php $active = activeMenu("recherche"); echo"$active";?>"href="index.php?uc=recherche">Recherche</a></li>
+  <li class="li_menu"><a   class="<?php $active = activeMenu("temps"); echo"$active";?>"href="index.php?uc=temps">Ajouter du temps</a></li>
     <li class="deco"><a href="controleurs/c_deconnection.php">Déconnexion</a>
-    <li class="deco" ><a href="index.php?uc=compte">Compte</a>
+    <li class="deco" ><a class="<?php $active = activeMenu("compte"); echo"$active";?>" href="index.php?uc=compte">Compte</a>
     
 </li>
 </ul>          
