@@ -1,0 +1,1197 @@
+# r2_ Description : Dictionnaire des messages uk
+# r2_ Version : V4R2
+# r2_ Type : texte
+# r2_ Modif : V4R2 patch 9 10/09/2015 sup Google images - add safesearch Google et Youtube
+# modif_frogi|V5R1 patch 1|GLB|27/06/2016|Ajout du mode compte libre avec charte informatique
+# 
+0_1||Informations								
+0_2||Validate
+0_3||Del
+0_4||Modification(s) done
+0_5||In progress...
+0_6||Edit
+0_7||Add
+0_8||On line
+0_9||Off line
+0_10||Include
+0_11||Exclude
+0_12||IP								
+0_13||Import
+0_14||Activated
+0_15||Desactivated
+0_16||Users
+0_17||Start time
+0_18||End time
+0_19||URL								
+0_20||Size
+0_21||Categories
+0_22||Temporary
+0_23||Permanent
+0_24||Hits								
+0_25||Apply
+0_26||Create
+0_27||Profiles								
+0_28||Error								
+0_29||Default								
+0_30||Mac Address
+0_31||Netbios name							
+0_32||Update
+0_33||MAC address
+0_34||Update in progress...
+0_35||IP Address
+0_36||Default setting
+0_37||Workstation
+0_38||Time
+0_39||Day
+0_40||Month
+0_41||Year
+0_42||Start date
+0_43||End date
+0_44||Web sites
+0_45||Accessed website
+0_46||Blocked website
+0_47||Search
+0_48||Start
+0_49||End
+0_50||Date								
+0_51||Procedure							
+0_52||Port
+0_53||Time
+0_54||Mask
+0_55||Gateway
+0_56||DNS
+0_57||Yes
+0_58||No
+0_59||Service activation 
+0_60||Name
+0_61||First name
+0_62||Login
+0_63||Email
+0_64||Modify
+0_65||les caractères accentués ou appartenant à la liste suivante: <span style="color:red;"># ! ^ $ ( ) [ ] { } ? + = * . \ | </span> sont invalides
+0_66||Documentations
+0_67||Technical documentations 
+0_68||Exclude
+0_69||Password
+0_70||Profile
+0_71||Group
+0_72||Creation Date  
+0_73||Last use
+0_74||SMS Quota 
+0_75||State
+0_76||Associated Profile 
+0_77||Message
+0_78||administrator contact
+0_79||Your message has been sent
+0_80||Top
+0_81||millions
+0_82||invalid data
+0_83||les caractères accentués ou appartenant à la liste suivante: <span style="color:red;"># ! ^ $ ( ) [ ] { } ? + = * . \ | _ table</span> sont invalides
+0_84||Your message has been sent\351
+0_85||return
+0_86||Start Port 
+0_87||End Port 
+0_88||French
+0_89||English 
+0_90||Internet access ask an authentificotion id<br /><br />Redirection to authentification formular
+0_91||Access allowed
+0_92||Include this website into the white list : 
+0_93||Website
+0_94||Administrator email not completed<br/>Message not sent
+0_95||Institution
+
+// Authentification
+0_100||authentification
+0_101||authentification accepted
+0_102||error update file users
+0_103||Authentification
+0_104||user:
+0_105||password:
+0_106||connection
+0_107||Incomplete formular
+0_108||Server Connexion Problem
+0_109||Not listed user
+0_110||Not authorized user
+0_112||Access codes request
+0_113||Enter your access codes 
+0_114||Access to the administration desk needs authentication<br /><br />you will be redirected towards the authentication formular
+0_115||TELEMAINTENANCE IN PROGRESS
+0_116||Former password
+
+// Administration
+0_120||Administration
+0_121||administration
+0_122||Disconnection
+0_123||Invalid password
+
+
+// Portail SMS
+0_130||Access code
+0_131||Access code
+0_132||Please complete the request formular here under.<br/>Your access codes will be sent to you by SMS.
+0_133||Telephone
+0_134||send
+0_135||User already saved
+0_136||Saving error. Please start again.
+0_137||Incorrect telephone 
+0_138||Please complete entirely the formular
+0_139||Back to the authentification portal
+0_140||SMS Quota depleted
+0_141||renewal
+0_142||<p>This telephone number corresponds to a user saved <br/><br/>If you have lost your access codes, it is necessary to renew your account</p>
+0_143||receive a new access code
+0_144||Please complete this formular<br/>Your access codes will be sent to you by email.
+0_145||Forgot password 
+0_146||<p>This email corresponds to a user saved <br/><br/>If you have lost your access codes, it is necessary to renew your account</p>
+0_147||Account linked
+0_148||<br/>A texto containing your access codes has been sent to you
+0_149||<br/>An email ccontaining your access codes has been sent to you
+
+// First administration
+0_150||administrator informations 
+0_151||address
+0_152||code postal
+0_153||city
+0_154||country
+
+// Disconnection
+0_200||Disconnection 
+0_201||disconnection 
+0_202||Disconnection in progress
+0_203||Disconnection done<br/><br/>Please hold on ...
+
+// close windows
+0_210||Access to internet
+
+// cgi squidguard
+0_211||access denied
+0_212||If you think it's a mistake, contact
+0_213||Frogi-Secure block 
+0_214|| by filter 
+0_215||administrator
+0_216||Write your message
+0_217||Expression 
+
+// User menu
+0_220||menu
+0_221||my account
+0_222||please contact the administrator
+0_223||Closing this page will activate an automatic disconnection<br/>
+0_224||Close the internet session ?
+0_225||You are disconnected\nPlease leave this page and relog
+0_226||You are disconnected<br/>Please leave this page and relog
+
+// v_alert
+0_230||<p>The SMS quota of password renewal is over</p><p>Please contact the administrator.</p>
+0_231||<p>Your account is under validation.</p><p>Please try to relog later.</p>
+0_232||<p>Your account is currently blocked.</p><p>Please contact the administrator.</p>
+0_233||<p>Login unavailable</p><p>Please enter a new one</p>
+
+// My account
+0_240||My user account
+0_241||my user account
+0_242||Please change your login password
+0_243||Confirmation 
+0_244||Account modified
+0_245||Account NOT modified
+0_246||password change
+
+// Calendrier
+0_250||Sunday
+0_251||Monday
+0_252||Tuesday
+0_253||Wednesday
+0_254||Thuesday
+0_255||Friday
+0_256||Saturday
+
+0_257||January
+0_258||February
+0_259||March
+0_260||April
+0_261||May
+0_262||June
+0_263||July
+0_264||August
+0_265||September
+0_266||October
+0_267||November
+0_268||December
+
+// clamav cgi
+0_270||Virus detected
+0_271||Nature
+0_272||Origine
+0_273||User
+0_274||Page not charged.
+0_275||Detection been by 
+
+// mire no ssl
+0_280||S&eacute;curity
+0_281||connexion not available
+0_282||this connection is in a secured mode.<br/>(https) is not allowed<br/><br/>contact the network administrator to exclude your pc from the filtering rules.
+
+// mois sans html entities
+0_290||February
+0_291||December
+
+// Demande de compte Libre
+0_300||ouverture de compte
+0_301||Vous devez accepter la charte pour continuer
+0_302||Utilisateur d&eacute;j&agrave; enregistr&eacute;
+0_303||Votre compte est ouvert. Un email de confirmation vous est envoy&eacute;.
+0_304||Erreur de mot de passe :<br/>Correspondance incorrecte ou trop court ( 8 caract&egrave;res minimum )
+0_305||Votre compte est ouvert. Voici votre identifiant / mot de passe : 
+
+// copyright bottom
+0_500||<a href='www.frogi-secure.com'>Frogi-Secure</a> - 2015 - &copy; All rights reserved 
+
+// sections R2
+0_700||All the secured Internet Websites (HTTPS)
+0_701||White list
+0_702||Black list
+0_703||Arjel labelled websites
+0_704||Hadopi labelled websites
+0_705||Money games
+0_706||Audio Video websites
+0_707||Audio and video files download
+0_708||Illegal download websites
+0_709||Adults only
+0_710||Adults only – Google Safesearch
+0_732||Adults only – Youtube Safesearch
+0_711||Adults only more restrictive
+0_713||On line games
+0_714||Online dating
+0_715||Social networks
+0_716||Shopping
+0_717||Sects
+0_718||Websites containing virus
+0_719||Radios
+0_720||Jobs offers
+0_721||Chat
+0_722||Webmail
+0_723||Tourism Hobbies
+0_724||Access to private websites (RFC 1918)
+0_725||Applications P2P
+0_726||Websites accessibles by IP addresses
+0_727||Publicity
+0_728||Confidentiality
+0_729||All the Internet websites (HTTP)
+0_730||Filtrering ports TCP UDP ( port access granted )
+0_731||redirect
+0_731||redirect
+0_733||Traffic coming from Internet denied
+0_734||HTTPS proxy mode
+
+0_800||Block the access to all the secured websites  (procedure HTTPS port 443) – Sometimes used to access to Facebook
+0_801||Allows the access to websites from the white list. Write the domain name ex: dailymotion.com and not the name of the website www.dailymotion.com
+0_802||Blocks access to blacklist websites
+0_803||Allows access to certified websites Arjel (Online Games Regulation Authority www.arjel.fr)
+0_804||Tick  to allow websites certified by Hadopi (www.pur.fr/plateformes)
+0_805||Block the access to online games websites, including those certified by ARJEL
+0_806||Block the access to websites proposing audio/video downloads 
+0_807||Block the download of files such as  (aif|aiff|aifc|avi|cda|dvit|divx|m3u|mid|mp2|mp3|mpg|pls|ra|ram|rar|snd|torrent|vivo|voc|vxd|wav|wmv|mkv)  
+0_808||Block the access to websites proposing illegal downloads.  
+0_809||Block the access to « adults only » websites (porn, violents, drogue, etc.)
+0_810||Indicate to search engines Google to exclude « adults only » websites
+0_811||Block the access to « adults only » websites (porn, violence, drogue, etc.) based on key words
+0_812||Block the access to Google Images
+0_813||Block access to gambling websites
+0_814||Block access to dating websites (ex: www.meetic.fr)
+0_815||Block access to social networks websites (ex: www.facebook.fr)
+0_816||Block access to shopping websites (ex: www.selfridges.com)
+0_817||Block access to sect websites
+0_818||Block access to virus websites
+0_819||Block access to radio websites
+0_820||Block access to jobsearch websites
+0_821||Block only chat websites
+0_822||Block email websites
+0_823||Block hobbies websites (travel, tourism, etc.)
+0_824||Block the access to private websites (whose IP addressing plan answers to standard RFC 1918)
+0_825||Block only applications such as Kazaa, eMULE, etc. that are used to exchange files between computers  
+0_826||Block the access to websites by IP addressing plan
+0_827||Block inconvenient advertisements
+0_828||Block the information feedback from certain websites
+0_829||Block the access to all the standard websites  (protocole HTTP port 80)
+0_830||Authorize only HTTP, HTTPS and ports specified in the tab “Filtering exception”
+0_831||Indicate to search engines Youtube to exclude « adults only » websites
+0_832||Traffic coming from Internet denied
+0_833||The HTTPS proxy mode enables to a safer securised accessed control but needs to set up a certificate on each device.
+
+// Synchronisation - Gestion de flotte
+0_900||Authentication portal
+0_901||Customization of the welcome page
+0_902||Email administrator
+0_903||White list
+0_904||List of websites excluded from analysis
+0_905||Black list
+0_906||Network Configuration 
+0_907||Option Internet blockage if malfunction
+0_908||Domain by default
+0_909||Option DNS relay
+0_910||Websites excluded from filtering
+0_911||Option telemaintenance
+0_912||Time slots
+0_913||Activation of SMS portal
+0_914||Optimization of the bandwidth
+0_915||Email report
+0_916||Automatic backup
+0_917||Filtering categories
+0_918||Activation of the traceability
+0_919||Youtube account management
+
+//-----------------------------------------------------------------
+1||Dashboard 
+1_1_1||The dashboard shows an overall view of the box characteristics, of the configuration and of the ressources used.<br /><br />If the traceability option is activated, the second part of the screen shows the most used websites of the day.
+1_1_2||Product information
+1_1_3||System
+1_1_4||Name of the box
+1_1_5||Box’s IP
+1_1_6||Processor used
+1_1_7||Memory use
+1_1_8||Available space
+1_1_9||Internet parameters
+1_1_10||Number of users
+1_1_11||Users disconnection
+1_1_12||Optimization @
+1_1_13||Internet traffic
+1_1_14||Security
+1_1_15||Authentification
+1_1_16||Traceability
+1_1_17||encrypted
+1_1_18||Number of referenced websites
+1_1_19||million(s)
+1_1_20||Web filter version 
+1_1_21||Antivirus
+1_1_22||Last update :
+1_1_23||Configuration
+1_1_24||End of warranty date 
+1_1_25||Serial number
+1_1_26||System
+1_1_27||TBI
+1_1_28||Patch
+1_1_29||System update date
+1_1_30||Day activity
+1_1_31||10 last visited websites
+1_1_32||Top 10 hits
+1_1_33||Top 10 downloads
+1_1_34||Top 10 blocked websites 
+1_1_35||Top of blocked categories
+1_1_36||Confidentiality
+1_1_37||Number of blocked publicities
+1_1_38||Number of potential infringements to confidentiality blocked
+1_1_39||Publicity
+1_1_40||Confidentiality
+//-----------------------------------------------------------------
+2||Web filters
+//-----------------------------------------------------------------
+2_1||Filter profiles management
+2_1_1||The web filter management allows to forbid the access to certain websites categories. The Hadopi filters, Arjel and White List bypass the access authorization to websites that could belong to one of the blocked categories.<br /><br />The referencing data base is updated daily via a download server.<br /><br />About HTTPS proxy mode, certificat is available to download at :<br /><br /><div style="text-align:center;"><a href="http://frogi-secure.com/certif/frogi-secure.der" target="_blank" >http://frogi-secure.com/certif/frogi-secure.der</a></div>
+2_1_2||Create a profile
+2_1_3||Name of the profile
+2_1_4||Profiles List
+2_1_5||Action/Categories/Worked hours/Hours NOT worked/Closed Hours 
+2_1_6||Deletion impossible because some groups are associated to this profile
+2_1_7||Would you like to delete the profile : 
+2_1_8||Filter categories 
+2_1_9||Group(s) associated(s)to the profile 
+2_1_10||Existing group(s) 
+2_1_11||Associated group(s)
+2_1_12||Youtube account management
+2_1_13||By creating a Youtube account it is impossible to apply it to a network, nor filter the search results.<br/>Mainly advised for education, it secures the Youtube use on videos selected by teachers or education educators.<br/><br/><a href='http://www.youtube.com/schools' target='_blank'>Create a Youtube account School now</a>
+2_1_14||Youtube Filter
+2_1_15||Safe Search Mode 
+2_1_16||Educ Mode
+2_1_17||ID school account
+2_1_18||ID
+2_1_19||Created Profile
+2_1_20||Existing Profile
+2_1_21||Administrator profile refused
+2_1_22||Profile deleted
+2_1_23||ID youtube modified
+//-----------------------------------------------------------------
+2_2||Filtered expressions management
+2_2_1||The expressions or keywords management allows to forbid access to certain internet websites.<br/><br/>These expressions are directly filtered at the level of given address.<br/><br/>It is possible to specify if a letter or a group of letters need to be taken into consideration through the following syntax. :<br/><br/><label><strong>?</strong></label>the preceding lette ris missing or repeated <strong>une</strong> fois ("words?" filter "word" and "words")<br/><br/><label><strong>*</strong></label>the preceding lette ris missing or repeated <strong>numerous</strong> fois ("words*" filter "word", "words" and "wordsssssss")<br/><br/><label><strong>+</strong></label>the <strong>sequency</strong> of preceding letters or more ("xxx+" filters the 3 letters sequency or more "xxxx","xxxxx")<br/>
+2_2_2||Parameters by default
+2_2_3||Initialise the list by d\351fault
+2_2_4||Expressions subject to filter by time slots
+2_2_5||Add an expression
+2_2_6||Expression
+2_2_7||Import an expressions list
+2_2_8||Import the list <a style="height:500px;width:500px;" title="one line by expression"><img height="16" width="16" style="cursor:pointer;" src="../images/loupe.png"></a>
+2_2_9||Filtered expressions 
+2_2_10||expressions
+2_2_11||Would you like to delete this expression :
+2_2_12||Expressions lists updated
+2_2_13||Error in the list of expressions update
+2_2_14||Expression already saved
+2_2_15||Expression added
+2_2_16||Expression deleted
+2_2_17||The expressions list is initialized
+2_2_18||Importat | Expressions list
+2_2_19||Import of the list of expressions
+2_2_20||Status
+2_2_21||Task
+2_2_22||File
+2_2_23||downloaded
+2_2_24||Expression
+2_2_25||already saved
+2_2_26||created
+2_2_27||Error in file download!
+2_2_28||Total
+2_2_29||error(s)
+//-----------------------------------------------------------------
+2_3||Filter exceptions 
+2_3_1||You can extract your workstation from the filter rules and from the antivirus control.<br /><br />This functionality needs to be used carefully, because the selected workstations will not benefit any more from the box protection.
+2_3_2||Exclude this workstation
+2_3_3||Exclude this workstation
+2_3_4||Exclude this workstation from filter rules
+2_3_5||Add this workstation
+2_3_6||This workstation will be again subject to filter rules
+2_3_7||Filter exceptions by MAC address
+2_3_8||Mac addresses of workstations excluded from the box protection
+2_3_9||Discovery of workstations present on the network
+2_3_10||Filter exceptions by IP address
+2_3_11||IP addresses of workstations excluded from the box protection 
+2_3_14||Exclude some websites from filtering
+2_3_15||This list allows the exclusion of websites from the filter system, you can use it if you meet some difficulties to access to a website or if you want to desactivate traceability for a website.<br />No control will be made for websites present in the list.
+2_3_16||Add a website to the filter exception 
+2_3_17||Website address
+2_3_18||List of websites excluded from filter
+2_3_19||Websites excluded
+2_3_20||Modification of filter rules
+2_3_21||The workstation is excluded from Web filtering
+2_3_22||This workstation is now subject to Web filter rules
+2_3_23||Add a MAC address
+2_3_24||Address
+2_3_25|| is now under filtering
+2_3_26|| is already in the list of filter exclusion
+2_3_27|| is added to the list of filter exclusion
+2_3_28||Workstations MAC addresses excluded from filtering
+2_3_29||The website
+2_3_30|| is deleted from the list of filter exceptions
+2_3_31|| is already in the list of filter exceptions
+2_3_32|| is added to the list of filter exception
+2_3_33||List of authorized ports 
+2_3_34||List of authorized ports (the function is activated via the filter « Filter of TCP UDP ports » in the tab  Management of filter profiles). <a style="height:500px;width:600px;" title="<table><tr><th>Numéros</th><th>Description</th><tr><td>20 / 21</td><td>Echange FTP</td></tr><tr><td>22</td><td>Exchange secured SSH / SFTP</td></tr><tr><td>23</td><td>Telnet</td></tr><tr><td>25</td><td>Emails distribution SMTP</td></tr><tr><td>53</td><td>Resolution of domain names in IP addresses : DNS</td></tr><tr><td>67 / 68</td><td>For DHCP and bootpc</td></tr><tr><td>110</td><td>Récupération Email via POP</td></tr><tr><td>119</td><td>NNTP (Newsgroups)</td></tr><tr><td>123</td><td>Hourly synchronization : Network Time Protocol (NTP)</td></tr><tr><td>143</td><td>Email recovery via IMAP</td></tr><tr><td>389</td><td>Connection LDAP</td></tr><tr><td>443</td><td>HTTPS</td></tr><tr><td>465</td><td>Email delivery via SSL SMTPS</td></tr><tr><td>500</td><td>Key exchange canal  IPsec</td></tr><tr><td>636</td><td>Connection LDAP secured by SSL layer / TLS</td></tr><tr><td>995</td><td>Secured email recovery POP3S</td></tr>><tr><td>1024 à 49151</td><td>Saved ports </td></tr><tr><td>1521</td><td>Oracle Database server</td></tr><tr><td>1723</td><td>VPN PPTP procedure</td></tr><tr><td>3306</td><td>MySQL data base server</td></tr><tr><td>3389</td><td>RDP Remote takeover</td></tr><tr><td>5432</td><td>PostgreSQL data base server</td></tr><tr><td>6667</td><td>Connection to IRC server (Internet Relay Chat)</td></tr><tr><td>49152 à 65535</td><td>Dynamic or private ports/td></tr></table>"><img height="16" width="16" style="cursor:pointer;" src="../images/loupe.png"></a>
+2_3_35||Add a port 
+2_3_36||Port parameters
+2_3_37||Nature
+2_3_38||Start
+2_3_39||End
+2_3_40||List of authorized ports
+2_3_41||Authorized ports 
+2_3_42|| The port is deleted
+2_3_43|| This port is already in the list
+2_3_44|| The port is added to the list
+2_3_45|| Incorrect port 
+
+//-----------------------------------------------------------------
+2_4||Customization of welcome interfaces 
+2_4_1||You have the possibility to change the interfaces appearance seen by users by changing images and colours.<br/><br/>Click in the field and choose the adequate colour in the colour palette or specify directly the colour according to the hexadecimal format( ex: #ffffff = white | #000000 = black).<br/><br/>You can also change the logo by downloading yours( maximal format : 410px x 97px ).
+2_4_2||Colours
+2_4_3||Background
+2_4_4||Frame background
+2_4_5||Border of the frame
+2_4_6||Announcement text font
+2_4_7||Text font in the frame
+2_4_8||Logo
+2_4_9||Appearance updated
+2_4_10||Maximal size 1 Mo
+2_4_11||Authorized extensions ( jpg | jpeg | gif | png )
+2_4_12||Image format limited to 410 pixels by 97 pixels
+2_4_13||Initialized parameters
+//-----------------------------------------------------------------
+3||B&W Lists
+//-----------------------------------------------------------------
+3_1||B&W Lists
+3_1_1||White List
+3_1_2||The white list allows to authorize the access to websites that could belong to one of the blocked categories.<br />The category " White list " in the Web Filters tab should be selected so that the websites access is released. Please enter the domain namee (ex: dailymotion.com) and not URL (www.dailymotion.com) 
+3_1_3||Add a website to the white list
+3_1_4||Website address
+3_1_5||Websites authorized
+3_1_6||Black list
+3_1_7||The black list allows to forbid the access to certain websites without blocking all the websites of its category.<br />The category " Black list " in the tab " Web filters " needs to be selected so that the access to websites is forbidden.
+3_1_9||Add a website to the black list
+3_1_10||Blocked websites
+3_1_11|| website 
+3_1_12|| is deleted from the white list
+3_1_13|| is already in the white list
+3_1_14|| is added to the white list
+3_1_15|| is deleted from the black list
+3_1_16|| is already in the black list
+3_1_17|| is added to the black list
+3_1_18|| est associ&eacute; a une domaine ou sous-domaine d&eacute;j&agrave; pr&eacute;sent en liste noire
+3_1_19|| est ajout&eacute; &agrave; la liste noire. C'est un sous-domaine. Attention le domaine associ&eacute; n'est pas bloqu&eacute;.
+3_1_20|| est associ&eacute; &agrave; un domaine ou sous-domaine d&eacute;j&agrave; pr&eacute;sente en liste noire
+3_1_21|| est associ&eacute; &agrave; une url d&eacute;j&agrave; pr&eacute;sente en liste noire
+3_1_22|| est associ&eacute; a une domaine ou sous-domaine d&eacute;j&agrave; pr&eacute;sent en liste blanche
+3_1_23|| est ajout&eacute; &agrave; la liste blanche. C'est un sous-domaine. Attention le domaine associ&eacute; n'est pas bloqu&eacute;.
+3_1_24|| est associ&eacute; &agrave; un domaine ou sous-domaine d&eacute;j&agrave; pr&eacute;sente en liste blanche
+3_1_25|| est associ&eacute; &agrave; une url d&eacute;j&agrave; pr&eacute;sente en liste blanche
+
+//-----------------------------------------------------------------
+4||Activity @
+//-----------------------------------------------------------------
+4_1||Users activities
+4_1_1||Services activation
+4_1_2||Web traceability activation
+4_1_3||Advanced traceability activation 
+4_1_4||Initialize the traceability data base
+4_1_5||This action will delete all the traceability \351 !\ data \351es Confirm deletion
+4_1_6||Data encryption
+4_1_7||Data encryption activation 
+4_1_8||CAREFUL\n\nActivation of data encryption service \351es\n\nThis action is irreversible. All the internet recordings will be encrypted and available only via the information from the associated encrypted. \nThis encryption key is automatically generated and can be available only on direct request coming from the company Frogi-Secure.\n\nDo you confirm the data encryption ? If yes, please click on OK, otherwise click on cancel.|
+4_1_9||not available without traceability
+4_1_10||Access to encrypted data
+4_1_11||Encrypted key [8 characters]
+4_1_12||Data reading
+4_1_13||Top WEB
+4_1_14||Advanced
+4_1_15||Sorted out by
+4_1_16||Number of visits
+4_1_17||Volume exchanged
+4_1_18||Time spent
+4_1_19||Cross-checking by
+4_1_20||Website
+4_1_21||Period
+4_1_22||Today
+4_1_23||Yesterday
+4_1_24||7 last days
+4_1_25||Current month
+4_1_26||Previous month 
+4_1_27||Top N
+4_1_28||Top
+4_1_29||Search criteria
+4_1_30||Name of the website
+4_1_31||IP source address
+4_1_32||Destination addressed
+4_1_33||Advanced Traffic
+4_1_34||IP destination
+4_1_35||No result found
+4_1_36||result
+4_1_37||Please complete one search criteria
+4_1_38||Page(s)
+4_1_39||there are over 250.000 results found<br/><br/> Please refine your search criteria.
+4_1_40||Black list
+4_1_41||Exclude
+4_1_42||White List 
+4_1_43||Details
+4_1_44||by
+4_1_45||<label><img src="./images/add.png" width="16" height="16" /></label>: Add to the black or white list.<br/><br/>				<label><img src="./images/YESvalid.png" width="16" height="16" /></label>: Website already present in the black or white list.<br/><br/>				<label><img src="./images/noedit.png" width="16" height="16" /></label>: Exclude this website from the search.<br/><br/>				<label><img src="./images/loupe.png" width="16" height="16" /></label>: detail research.
+4_1_46||<span style='color:red;font-size:14px;'>Erreur</span><br/><br/>Possible reasons :<br/><br/>1. The encrypted key <span style='color:red;'>
+4_1_47||</span> completed is incorrect. Please enter the key by respecting the exact syntax.<br/><br/>2. La <span style='color:red;'>data base is blank</span>
+4_1_48||The encrypted key <span style='color:green;font-size:14px;'>
+4_1_49||</span> is incorrect.a wellknown error has appeared.<br/>			Please start again the typing. If the problem continues, please contact the technical service.<br />Thank you.
+4_1_50||Web traceability activated
+4_1_51||Activation of web traceability
+4_1_52||Desactivation of web traceability
+4_1_53||Encrypted traceability already activated
+4_1_54||Activation of encrypted traceability
+4_1_55||Initialized traceability base
+4_1_56||Advanced traceability activated
+4_1_57||Desactivation of advanced traceability
+4_1_58||Direction
+4_1_59||Ip source
+4_1_60||Port source
+4_1_61||Port destination
+4_1_62||Station source
+4_1_63||Station destination
+//-----------------------------------------------------------------
+4_2||Report
+4_2_1||Distribution by email of users activity
+4_2_2||Services activation 
+4_2_3||Report activation by email
+4_2_4||Report configuration
+4_2_5||Report content
+4_2_6||Sent to
+4_2_7||Email list
+4_2_8||Data
+4_2_9||Number of visits by website
+4_2_10||Number of visits by user
+4_2_11||Volume exchanged by website
+4_2_12||Volume exchanged by user
+4_2_13||Time spent by website
+4_2_14||Time spent by user
+4_2_15||Top N
+4_2_16||Number of results
+4_2_17||Frequency
+4_2_18||Daily
+4_2_19||Weekly
+4_2_20||Monthly
+4_2_21||Reports
+4_2_22||Reports in progress
+4_2_23||Daily report
+4_2_24||Weekly report
+4_2_25||Monthly report 
+4_2_26||Traceability is encrypted, it is not possible to receive reports in this mode
+4_2_27||Traceability is desactivated, it is not possible to receive reports in this mode
+// PDF Reports
+4_2_28||Activity report
+4_2_29||System informations 
+4_2_30||Internet parameters
+4_2_31||Serial number
+4_2_32||Authentification
+4_2_33||Ip box
+4_2_34||Number of referenced websites
+4_2_35||Disk space
+4_2_36||Filter version 
+4_2_37||System
+4_2_38||Antivirus
+4_2_39||Patch
+4_2_40||Version
+4_2_41||System update
+4_2_42||Base
+4_2_43||End of warranty date
+4_2_44||Date
+4_2_45||the most visited websites
+4_2_46||blocked websites 
+4_2_47||of visit number by user
+4_2_48||of blocked website number by user
+4_2_49||of downloads by website
+4_2_50||of downloads by user
+4_2_51||of time spent by website
+4_2_52||of time spent by user
+4_2_53||Websites
+4_2_54||Users
+4_2_55||Categories
+4_2_56||Advanced traceability
+4_2_57||Daily report of
+4_2_58||to
+4_2_59||Activity report
+
+//-----------------------------------------------------------------
+4_3||Results exclusion list
+4_3_1||Exclude websites from the activity analysis
+4_3_2||This list allows exclusion of websites in the analysis and research functions 
+4_3_3||Add a website to the exclusion list
+4_3_4||Website address
+4_3_5||Exclusion list
+4_3_6||Excluded websites from statistics research results
+4_3_7||Website 
+4_3_8|| is deleted from results exclusion list
+4_3_9|| is already in the results exclusion list
+4_3_10|| is added to the results exclusion list
+4_3_11||Traceability is encrypted, it is not possible to receive reports in this mode
+4_3_12||Traceability is desactivated, it is not possible to receive reports in this mode 
+//-----------------------------------------------------------------
+5||Time slots
+5_1_1||Time slot definition
+5_1_2||Filter rules to access websites can apply according to time slots. To define time slots, please follow this :<br /><br />  1) In the  "Modification" tab, define the slots (by &frac12; hour) worked, not worked and closed.<br />  2)In the tab »Apply to », indicate to which day of the week you intend to apply the time slots.<br /><br />You can also :<br /><br />  1) In the tab "Time slots being used », select a time slot template.<br />  2) In the tab "Apply to" , apply the model to another day of the week.<br />
+5_1_3||Time slots being used
+5_1_4||Sections time/Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+5_1_5||Modification of the time slot
+5_1_6||Modification**&frac12;*Open hours<br/>(0-30 min)*Open hours<br/>(30-60 min)*Not open hours<br/>(0-30 min)*Not open hours<br/>(30-60 min)*Closed hours<br/>(0-30 min)*Closed hours<br/>(30-60 min)*Apply to
+5_1_7||Modification of the time slot
+//-----------------------------------------------------------------
+6||Antivirus
+//-----------------------------------------------------------------
+6_1||Services
+6_1_1||Antivirus management
+6_1_2||Antivirus activation or desactivation requires a reboot of the box.The reboot starts automatically after the service status change.
+6_1_3||Service activation 
+6_1_4||Antivirus activation 
+6_1_5||Antivirus informations 
+6_1_6||Antivirus :
+6_1_7||Version :
+6_1_8||Base :
+6_1_9||Date :
+6_1_10||Antivirus desactivated"
+6_1_11||Antivirus activated
+6_1_12||Antivirus already activated
+6_1_13||Antivirus already desactivated
+6_1_14||ERROR during procedure
+//-----------------------------------------------------------------
+6_2||Customization warning page
+6_2_1||Customization of antivirus warning interfaces
+6_2_2||You have the possibility to change the appearance of interfaces seen by users by changing images and colours .<br/><br/>Click in the fields and choose the adequate colour in the colour palette or specify directly the colour on hexadecimal format ( ex: #ffffff = white | #000000 = black).<br/><br/>You can also change the logo by downloading yours(maximal format: 410px x 97px ).
+6_2_3||Colours
+6_2_4||Background
+6_2_5||Frame’s background
+6_2_6||Frame’s border
+6_2_7||Announcement text’s font
+6_2_8||Text’s font in the frame
+6_2_9||Logo
+6_2_10||Appearance update
+6_2_11||Maximal size 1 Mo
+6_2_12||Authorized extensions ( jpg | jpeg | gif | png )
+6_2_13||Image format limited to 410 pixels by 97 pixels
+6_2_14||Initialized parameters
+//-----------------------------------------------------------------
+7||Authentification & Groups
+//-----------------------------------------------------------------
+7_1||Services
+7_1_1||Authentification’s parameters
+7_1_2||When authentification is activated, users should indicate a name  and a password to be able to access to internet.<br />Authentification allows also to indicate the user name in the activity reports.
+7_1_3||Services configuration
+7_1_4||Services activation
+7_1_5||Temporary authentification 
+7_1_6||Permanent authentification 
+7_1_7||No authentification
+7_1_8||Automatic disconnection after
+7_1_9||inactivity minutes 
+7_1_10||Redirection page
+7_1_11||Redirection
+
+7_1_12||SMS Portal
+7_1_13||SMS portal activation
+7_1_14||Number of SMS used
+7_1_15||SMS service parameters
+7_1_16||<a href="http://www.lesms.com" target="_blank">Open an account SMS</a>
+7_1_17||End up with trial period ?
+7_1_18||End up with trial period ?
+7_1_19||SMS services parameters
+7_1_20||Server
+7_1_21||Login
+7_1_22||Password
+7_1_23||Name of reference file
+7_1_24||In test
+7_1_25||Administrator configuration
+7_1_26||Administrator password change
+7_1_27||Former password
+7_1_28||New password
+7_1_29||Confirmation
+7_1_30||Initialise the password by default
+7_1_31||by default
+7_1_32||Administrator email change
+7_1_33||Email
+7_1_34||current
+7_1_35||The disconnection counter needs to be digital and different from 0
+7_1_36||Temporary authentification is activated
+7_1_37||Permanent authentification is activated 
+7_1_38||Authentification is desactivated
+7_1_39||Permanent authentification is activated 
+7_1_40||Permanent authentification is disactivated
+7_1_41||Redirection page modified
+7_1_42||SMS portal desactivation 
+7_1_43||SMS trial period desactivated
+7_1_44||Error during desactivation of SMS trial period
+7_1_45||SMS server’s parameters saved
+7_1_46||The desactivation duration is modified
+7_1_47||User already existing
+7_1_48||Failure in the addition of user
+7_1_49||User is created
+7_1_50||User does not exist
+7_1_51||Failure in user deletion
+7_1_52||User deleted
+7_1_53||Failure ! Impossible to set up connection 
+7_1_54||Failure in deletion of admin user
+7_1_55||Failure in addition of admin user
+7_1_56||The password or user name is invalid. <br/>les caractères : <span style="color:red;"># ! ^ $ ( ) [ ] { } ? + * . \ | are invalid</span>
+7_1_57||the administrator password is changed
+7_1_58||the administrator password is incorrect
+7_1_59||The password is not similar or invalid. The administrator password has not been changed.<br/>les caractères : <span style="color:red;"># ! ^ $ ( ) [ ] { } ? + * . \ | are invalid</span>
+7_1_60||the administrator’s email has not been changed
+7_1_61||the administrator’s email is changed
+7_1_62||Administrator’s password initialised
+7_1_63|Users’ list updated
+7_1_64||Error in users’ list update
+7_1_65||IP authentification
+7_1_66||IP authentification is activated<br/>
+7_1_67||IP authentification is disactived<br/>
+7_1_68||Active Directory (AD)
+7_1_69||Active Directory (AD) authentification is activated
+7_1_70||Active Directory (AD) authentification is disactivated
+7_1_71||SMS portal
+7_1_72||Email portal
+7_1_73||No portal
+7_1_74||SMS portal activated
+7_1_75||Email portal activated
+7_1_76||Portal back email
+7_1_77||password initialized
+7_1_78||Your password is initialized.  Here are your username / password : 
+7_1_79||Navigation Menu
+7_1_80||Navigation user menu is activated
+7_1_81||Navigation user menu is disactivated;
+7_1_82||Download Active Directory server sources
+7_1_83||Active directory source
+7_1_84||Home page for users
+7_1_85||Home page users is activated
+7_1_86||Home page settings
+7_1_87||Home page integrated
+7_1_88||Home page distant 
+7_1_89||Path
+7_1_90||Home page is updated
+7_1_91||Home page text
+
+//-----------------------------------------------------------------
+7_2||Groups and users management
+7_2_1||You have the possibility to add users one by one or to import a list via a pre-formated file.
+7_2_3||Delete all the groups and users accounts
+7_2_4||Delete all the users’ accounts
+7_2_5||IP(s) / associated network(s)
+7_2_6||<a style="height:500px;width:500px;" title="<img src='../images/masque_ip.png'/>"><img height="16" width="16" style="cursor:pointer;" src="../images/loupe.png"></a>
+7_2_7||Delete the group
+7_2_8||Group management
+7_2_9||Renew password ?
+7_2_10||Existing user(s)
+7_2_11||Associated user(s)
+7_2_12||Import a list of groups
+7_2_13||Import the list <a style='height:500px;width:500px;' title='a line per group according to the format :<br/><strong>Groupe;Type de groupe</strong>("ip" ou "user")'><img height='16' width='16' style='cursor:pointer;' src='../images/loupe.png'></a>
+7_2_14||Users group
+7_2_15||IP addresses group
+7_2_16||Type of group
+7_2_17||New group
+7_2_18||Users management
+7_2_19||Add a user
+7_2_20||Password
+7_2_21||Import a list of users
+7_2_22||Import a list <a style='height:500px;width:500px;' title='one line per user according to the format :<br/><strong>Login;Nom;Prénom;Groupe;Mot de passe;Telephone;Email</strong>'><img height='16' width='16' style='cursor:pointer;' src='../images/loupe.png'></a>
+7_2_23||Delete the account
+7_2_24||Former version
+7_2_25||Block the account :
+7_2_26||Validate the account :
+7_2_27||Force the renew of the password of the account :
+7_2_28||Account being validated
+7_2_29||The disconnection counter should be digital and different from 0
+7_2_30||Authentification is activated
+7_2_31||Authentification is disactivated
+7_2_32||The desactivation duration is modified
+7_2_33||User already existing
+7_2_34||Failure in addition of user<br/>
+7_2_35||User is created
+7_2_36||User does not exist
+7_2_37||Failure in user deletion 
+7_2_38||User deleted
+7_2_39||All the groups and users accounts are deleted
+7_2_40||All the groups and users accounts are deleted
+7_2_41||User is modified
+7_2_42||Error in users list updates
+7_2_43||The group is created
+7_2_44||The group is deleted
+7_2_45||The group is modified
+7_2_46||Error in the updates of groups list
+7_2_47||Failure ! Impossible to set up connection
+7_2_48||Failure in deletion of user admin
+7_2_49||Failure in addition of user admin
+7_2_50||The password or the user name is invalid. <br/>
+7_2_51||The administrator password is changed
+7_2_52||The administrator password is incorrect
+7_2_53||The password is not similar or invalid. The administrator password has not been changed.<br/>
+7_2_54||the administrator email has not been changed
+7_2_55||the administrator email is changed
+7_2_56||Users lists updated
+7_2_57||Updates error of the users list
+7_2_58||IP address not compliant
+7_2_59||IP already present
+7_2_60||The user is modified<br/>The password is modified
+7_2_61||Options
+7_2_62||User password change
+7_2_63||Force the user password change when first account use
+7_2_64||Activated options
+7_2_65||Disactivated options
+7_2_66||Importation of users list
+7_2_67||Status
+7_2_68||Task
+7_2_69||downloaded
+7_2_70||User
+7_2_71||already saved
+7_2_72||created
+7_2_73||Name or user password invalid
+7_2_74||Existing user
+7_2_75||Unknown group
+7_2_76||Error in creation of user account
+7_2_77||Error in file download
+7_2_78||Total
+7_2_79||error(s)
+7_2_80||File
+7_2_81||Initialise password account 
+7_2_82||Multi login available
+7_2_83||Disconnect
+7_2_84||User is disconnected 
+7_2_85||Failure - User is not disconnected;
+
+//-----------------------------------------------------------------
+7_3||Customization of welcome pages
+7_3_1||Customization of welcome interfaces
+7_3_2||You have the possibility to change appearance of the interfaces seen by users by changing images and colours.<br/><br/>Click in the fields and choose the adequate colour in the colour palette, or specify directly the colour under hexadecimal format ( ex: #ffffff = white | #000000 = black).<br/><br/>You can also change the logo by downloading yours ( format maximal : 410px x 97px ).
+7_3_3||Colours
+7_3_4||Background
+7_3_5||Background of the frame
+7_3_6||Background of the formulars fields
+7_3_7||Buttons background
+7_3_8||Frame’s border
+7_3_9||Formulars’ fields border
+7_3_10||Announcement text font
+7_3_11||Text’s font in the frame
+7_3_12||Edition of welcome text
+7_3_13||Logo
+7_3_14||Appearance update
+7_3_15||Maximal size 1 Mo
+7_3_16||Authorised extensions ( jpg | jpeg | gif | png )
+7_3_17||Image format limited to 410 pixels by 97 pixels
+7_3_18||Initialised parameters
+//-----------------------------------------------------------------
+8||System
+//-----------------------------------------------------------------
+8_1||System management
+8_1_1||System configuration
+8_1_2||Name of the box
+8_1_3||Name
+8_1_4||current
+8_1_5||Configuration
+8_1_6||End of warranty date
+8_1_7||Serial number
+8_1_8||System
+8_1_9||TBI
+8_1_10||Patch
+8_1_11||System update date
+8_1_12||Box update
+8_1_13||Update request
+8_1_14||Update search
+8_1_15||Update search
+8_1_16||Box management
+8_1_17||Reboot
+8_1_18||Restart the box 
+8_1_19||Reboot
+8_1_20||Stop the box
+8_1_21||Stop the box ?
+8_1_22||Stop
+8_1_23||Restart in progress ...
+8_1_24||Stop in progress ...
+8_1_25||Update done
+8_1_26||Modification of the box name done
+8_1_27||Box name not recognized
+8_1_28||Update in progress
+//-----------------------------------------------------------------
+8_2||Backup / Recovery
+8_2_1||Backup / System recovery
+8_2_2||Automatic backup of the traceability base
+8_2_3||Activate the service
+8_2_4||Automatic backup of the traceability base
+8_2_5||FTP server parameters
+8_2_6||Hostname
+8_2_7||User
+8_2_8||Password
+8_2_9||Path
+8_2_10||Backup format
+8_2_11||Backup / Manual recovery of the configuration
+8_2_12||Configuration backup in progress
+8_2_13||Configuration backup
+8_2_14||Configuration recovery 
+8_2_15||Configuration file to recover
+8_2_16||Configuration recovery
+8_2_17||Configuration recovery in progress ...
+8_2_18||Backup / Manual recovery of the traceability base
+8_2_19||Saving the data base
+8_2_20||Data base backup
+8_2_21||Recover the data base
+8_2_22||Data base to recover:
+8_2_23||Recovery of the data base
+8_2_24||Recovery of the data base in progress ...
+8_2_25||Automatic backup desactivated
+8_2_26||Automatic backup activated
+8_2_27||FTP server parameters recorded
+8_2_28||The configuration is recovered
+8_2_29||The databse is recovered
+8_2_30||Error during download of the configuration file
+8_2_31||Error during download of the data base file
+8_2_32||The file format is incorrect
+8_2_33||<br/>Error of system version or product
+8_2_34||<br/>Database Error
+8_2_35||<br/>System Error
+
+//-----------------------------------------------------------------
+9||Advanced functions 
+//-----------------------------------------------------------------
+9_1||Bridge/Routeur
+9_1_1||Bridge or routeur mode
+9_1_2||<div style='float:left;width:47%;'>The Frogi Secure boxes can work either in Transparent mode (Bridge) or in Routeur mode.<br><br>The transparent mode needs a DHCP service on the network.<br><br>In routeur mode it is necessary to indicate IP Lan and Wan addresses so as the route by default (Internet route).<br/><br/>You can also indicate a DHCP service for the Lan (DHCP server tab)<br/><br/><strong>In order to take into account the mode change, it is necessary to reboot the box (System tab).</strong></div>
+9_1_3||<div style='float:right;width:47%;'><img width='320' class='tof_arrondie' src='../images/frogi-20-lan-uk.png'/></div>
+9_1_4||<div style='float:right;width:47%;'><img width='320' class='tof_arrondie' src='../images/frogi-50-lan-uk.png'/></div>
+9_1_5||Mode choice
+9_1_6||Mode of operation choice
+9_1_7||Transparent
+9_1_8||Routeur
+9_1_9||BRIDGE mode parameters
+9_1_10||@IP-DHCP (Interfaces banalisées)
+9_1_11||@IP-Fixe (WAN sur Int 1, LAN sur Int 2)
+9_1_12||Mask
+9_1_13||Gateway
+9_1_14||ROUTEUR mode parameters
+9_1_15||@IP-Fixe WAN (on Int 1)
+9_1_16||@IP-Fixe LAN (on Int 2)
+9_1_17||NAT
+9_1_18||  Addressing check ...
+9_1_19||Not valid format(s) 
+9_1_20||Inform a route by default
+9_1_21||Informed IP(s) not available
+9_1_22||WARNING double adressing on 
+9_1_23||WAN DHCP mode ( Int 1)
+9_1_24||WAN STATIC IP mode (Int 1)
+
+//-----------------------------------------------------------------
+9_2||DHCP server
+9_2_1||DHCP server
+9_2_2||You can define a DHCP service on the LAN (Int2) and Secondary interfaces (Int3) if this one has been defined in the secondary network tab.<br><br>The routeur and DNS addresses wil be the box’s ones.
+9_2_3||Lease terms
+9_2_4||DHCP LAN server parameters
+9_2_5||Activate the DHCP service
+9_2_6||Domain name (optional)
+9_2_7||Network
+9_2_8||@IP start
+9_2_9||@IP end
+9_2_10||Wins server (optional)
+9_2_11||Unavailable service - DHCP activated in bridge mode ( interfaces banalisées )
+9_2_12||DHCP server parameters secondary Network
+9_2_13||Not valid format(s) 
+9_2_14||DHCP service unavailable in routeur mode
+error
+
+DNS
+//-----------------------------------------------------------------
+9_3||Routing table 
+9_3_1||Routing
+9_3_2||If you have distant networks that use the internet access controlled by your FROGI box, please indicate hereunder the gateway IP address that enables access to your distant locations. <br><br> The local users so as the ones from distant locations will be submitted to the same control rules (see plan). <a style="height:500px;width:500px;" title="<img src='../images/schema-reseau-principal-uk.png'/>"><img height="16" width="16" style="cursor:pointer;" src="../images/loupe.png"></a>
+9_3_3||Routing parameters
+9_3_4||IP network
+9_3_5||Mask
+9_3_6||<a style="height:500px;width:500px;" title="<img src='../images/masque-ip-uk.png'/>"><img height="16" width="16" style="cursor:pointer;" src="../images/loupe.png"></a>
+9_3_7||Route > 
+9_3_8|| < suppress
+9_3_9|| < already existing
+9_3_10|| < added
+9_3_11|| < not valid
+//-----------------------------------------------------------------
+9_4||Secondary network
+9_4_1||Secondary network
+9_4_2||The use of a secondary network enables : <br><br> 1) To share an internet access between two networks that have different rights. <br><br> 2) To forbid access to the secondary network from the main network. <br><br> 3) To enable or not access to the main network from the secondary one. <br><br> This functionality has been developed to answer to specificities as some schools that have an educational network so as an administrative one. <br><br> You have also the possibility to indicate in the tab « Routing » a gateway to reach distant locations (see plan).  <a style="height:500px;width:500px;" title="<img src='../images/schema-reseau-secondaire-20-uk.png'/>"><img height="16" width="16" style="cursor:pointer;" src="../images/loupe.png"></a>
+9_4_3||The use of a secondary network enables : <br><br> 1) to share an internet access between two networks with different rights, <br><br> 2) to forbid the access to the secondary network from the main one, <br><br> 3) to enables or not the access to the main network from the secondary one. <br><br> This functionality has been developed to answer to specificities as some schools that have an educational network so as an administrative. <br><br> You have also the possibility to indicate in the tab « Routing » a gateway to reach distant locations (see plan).  <a style="height:500px;width:500px;" title="<img src='../images/schema-reseau-secondaire-50-uk.png'/>"><img height="16" width="16" style="cursor:pointer;" src="../images/loupe.png"></a>
+9_4_4||Secondary network parameters
+9_4_5||Internet access
+9_4_6||Access to the main network
+9_4_7||Internet access
+9_4_8||Access to Internet from the secondary network :
+9_4_9|| Yes, without being submitted to the filter rules
+9_4_10|| Yes, by being submitted to the filter rules
+9_4_11||Secondary network users are authorised to access to the main network
+9_4_12||Desactivate the secondary network
+9_4_13||Desactivation of the secondary network 
+9_4_14||Ip, mask or gateway not valid
+9_4_15||filtered
+9_4_16||Authentification secondary network
+9_4_17||Consideration of authentification options of the main network 
+
+//-----------------------------------------------------------------
+9_5||Options
+9_5_1||Options system
+9_5_2||Telemaintenance
+9_5_3||Telemaintenance enables the Frogi-Secure technical departement to connect on your box in order to analyse and correct the problems.<br><br>You can desactivate this function and activate it on request (button "launch telemaintenance"). 
+9_5_4||Telemaintenance authorisation 
+9_5_5||Telemaintenance launch
+9_5_6||Telemaintenance launch 
+9_5_7||Safe Mode
+9_5_8||In case of dysfunction of the box filter functions, you can:<br><br>1) Block the internet access<br>2) Authorise the Internet access<br><br>In those two cases, a message will be sent out to the administrator’s email address (defined in the "Authentification" tab)
+9_5_9||In case of dysfunction of the box filter functions, authorise the internet access 
+9_5_10||Bandwidth optimization 
+9_5_11||Bandwidth optimization (QoS) allocates priorities; different to the Internet connection sessions, according to their profile.<br><br>Consequently a user surfing on internet websites will get more priority than a user who downloads a file.  
+9_5_12||DNS Relay
+9_5_13||Frogi Secure boxes intercept the DNS requests for the certificate management and https Google redirection (transformed in http).<br><br>If you desactivate this function the box certificate will not be recognised any more and the https Google will be authorised.<br><br>You have the possibility to indicate a DNS relay that is generally the one of your internet operator. 
+9_5_14||IP DNS relay
+9_5_15||Domain by default
+9_5_16||Factory configuration 
+9_5_17||The box is completely initialised in the factory configuration.<br/> The traceability base and the users account base  will be initialised
+9_5_18||Factory configuration 
+9_5_19||All the data will be deleted. This action needs a reboot of the box. Confirm the procedure
+9_5_20||Box in factory configuration 
+9_5_21||Optimisation desactivated
+9_5_22||Optimisation activated
+9_5_23||Optimisation already activated
+9_5_24||Optimisation already desactivated
+9_5_25||Telemaintenance activated
+9_5_26||Telemaintenance desactivated
+9_5_27||Telemaintenance already activated
+9_5_28||Telemaintenance already desactivated
+9_5_29||Safe Mode activated
+9_5_30||Safe Mode desactivated
+9_5_31||Safe Mode already activated
+9_5_32||Safe Mode already desactivated
+9_5_33||Relay DNS activated
+9_5_34||Relay DNS disactivated
+9_5_35||IP DNS Relay recorded
+9_5_36||IP DNS Relay incorrect
+9_5_37||Telemaintenance launched
+9_5_38||Telemaintenance not synchronised
+9_5_39||Telemaintenance not synchronised
+9_5_40||Box in factory configuration 
+9_5_41||Time zone
+9_5_42||informations on the time zone
+9_5_43||Continents
+9_5_44||Cities
+
+
+//-----------------------------------------------------------------
+9_6||Fleet management
+9_6_1||Fleet management
+9_6_2||You have the possibility to diffuse updates from a reference box towards boxes belonging  to a fleet
+9_6_4||Mode choice
+9_6_5||Mode
+9_6_6||Reference box 
+9_6_7||Box belonging to a fleet 
+9_6_8||Independant box
+9_6_9||Configuration of the bow belonging to the fleet
+9_6_10||Reference box
+9_6_11||Password
+9_6_12||Synchronization
+9_6_13||Launch a synchronization
+9_6_14||Configuration of the reference box 
+9_6_15||It is necessary to indicate two types of information : <br><br>1) Parameters to be synchronized.<br><br>2) Serial numbers of the boxes to synchronize.<br><br>On the boxes to be synchronized, you will need to indicate also the serial number so as the password of the reference box.
+9_6_16||Synchronization parameters
+9_6_17||Serial number
+9_6_18||Password 
+9_6_19||Configuration of the fleet boxes
+9_6_20||Box to synchronize
+9_6_21||Commentary
+9_6_22||Configuration
+9_6_23||Parameters
+9_6_24||Fleet boxes
+9_6_25||Request date
+9_6_26||Last synchronization
+9_6_27||Status
+9_6_28||Box added : 
+9_6_29||Box deleted : 
+9_6_30||Box linked to a fleet
+9_6_31||Synchronization launched
+9_6_32||Synchronization done
+9_6_33||Data updated
+
+//-----------------------------------------------------------------
+9_7||Internet X2 ( Multiwan )
+9_7_1||Gestion de plusieurs acces Internet
+9_7_2||Informations sur lea gestion multiwan
+9_7_3||Activation du service multiwan
+9_7_4||Informations activation du service
+9_7_5||Activer le multiwan
+9_7_6||Param&egrave;tres du multiwan
+9_7_7||Param&egrave;tres
+9_7_8||Interfaces
+9_7_9||DHCP
+9_7_10||Fixe
+9_7_11||Adresse IP
+9_7_12||Masque
+9_7_13||Passerelle
+9_7_14||Equilibrage de charge
+9_7_15||Secours
+9_7_16||Notifications
+9_7_17||R&egrave;gles de routage Multiwan
+9_7_18||Nouvelle r&egrave;gle de routage Multiwan
+9_7_19||Source
+9_7_20||Destination
+9_7_21||Protocole
+9_7_22||Port
+9_7_23||Interface
+9_7_24||Principale
+9_7_25||Secondaire
+9_7_26||Secours
+9_7_27||R&egrave;gles Multiwan actives
+9_7_28||Interface Multiwan activ&eacute;
+9_7_29||Interface Multiwan d&eacute;sactiv&eacute;
+9_7_30||Interface DHCP activ&eacute;
+9_7_31||Interface DHCP d&eacute;sactiv&eacute;
+9_7_32||Interface DHCP Erreur de format
+9_7_33||Route multiwan cr&eacute;&eacute;e
+9_7_34||Route multiwan supprim&eacute;e
+9_7_35||Route multiwan d&eacute;j&agrave; enregistr&eacute;e
+9_7_36||Route multiwan Erreur de format
+9_7_37||Multiwan indisponible  - r&eacute;seau secondaire activ&eacute;
+
