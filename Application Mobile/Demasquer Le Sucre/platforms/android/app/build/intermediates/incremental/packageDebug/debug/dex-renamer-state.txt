@@ -1,0 +1,4 @@
+#Fri Feb 08 16:50:50 CET 2019
+base.0=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer Le Sucre\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

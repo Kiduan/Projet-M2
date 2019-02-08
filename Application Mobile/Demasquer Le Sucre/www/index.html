@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Noureddine ADJOU" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Debuger -->
+	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.4.105/ ">
+
+    <!-- Title -->
+    <title>Démasquer le sucre</title>
+	
+    <!-- Css Styles -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<!--- -->
+	<script type="text/javascript" src="js/jQuery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="js/jquery.p2r.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	
+
+	
+</head>
+
+<!-- Header -->
+<div class="page-header container">
+    <h1>Page de connexion</h1>
+</div>
+
+<div class="container">
+    <form onsubmit="authentification" method="post" id="form">
+        <h3>Adresse mail</h3>
+        <input type="text" name="mail" id="mail">
+        <h3>Mot de passe</h3>
+        <input type="password" name="motDePasse" id="motDePasse">
+        <br><br>
+        <input type="submit" value="Se connecter">
+    </form>
+</div>
+
+<script>
+    app.initialize();
+
+
+    $("#form").submit(function (e) {
+        var form = $(this);
+        var url = form.attr('action');
+
+        $.ajax({
+            type: "GET",
+            url: 'http://172.31.4.105/authentification.php',
+            data: form.serialize(), // serializes the form's elements.
+            success: function (data) {
+                /*Selon data on se redérecte vers l'accueil*/
+				if (data.indexOf('True') != -1)
+				{
+					window.location.replace("accueil.html");
+				}
+				else
+				{
+                alert("Erreur d'authentification");
+				window.location.replace("index.html");
+				}
+                //if(data.localeCompare("root1234adj")==0)
+            }
+        });
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
+</script>
+</body>
+</html>
