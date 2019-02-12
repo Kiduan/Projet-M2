@@ -13,14 +13,9 @@
     <title>Démasquer le sucre</title>
 	
     <!-- Css Styles -->
-<<<<<<< HEAD
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
     <!--- -->
-=======
-	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
-	<!--- -->
->>>>>>> eb4fe1665ff2898782023e1f20adbfb948148f0d
 	<script type="text/javascript" src="js/jQuery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
 	<script type="text/javascript" src="js/jquery.p2r.js"></script>
@@ -31,7 +26,6 @@
 </head>
 
 <!-- Header -->
-<<<<<<< HEAD
 <div class="page-header container" align="center">
     <h1>Page de connexion</h1>
 </div>
@@ -47,21 +41,6 @@
             <input class="btn btn-primary" type="submit" value="Se connecter">
         </form>
     </div>    
-=======
-<div class="page-header container">
-    <h1>Page de connexion</h1>
-</div>
-
-<div class="container">
-    <form onsubmit="authentification" method="get" id="form">
-        <h3>Adresse mail</h3>
-        <input type="text" name="mail" id="mail">
-        <h3>Mot de passe</h3>
-        <input type="password" name="motDePasse" id="motDePasse">
-        <br><br>
-        <input type="submit" value="Se connecter">
-    </form>
->>>>>>> eb4fe1665ff2898782023e1f20adbfb948148f0d
 </div>
 
 <script>
@@ -71,10 +50,6 @@
     $("#form").submit(function (e) {
         var form = $(this);
         var url = form.attr('action');
-<<<<<<< HEAD
-=======
-		alert("Hello");
->>>>>>> eb4fe1665ff2898782023e1f20adbfb948148f0d
         $.ajax({
             type: "GET",
             url: 'http://172.31.4.106/authentification.php',
