@@ -1,0 +1,17 @@
+{
+  "name": "com.phonegap.helloworld",
+  "version": "1.0.0",
+  "displayName": "Camera",
+  "cordova": {
+    "platforms": [],
+    "plugins": {
+      "cordova-plugin-file-transfer": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "^7.1.4",
+    "cordova-plugin-barcodescanner": "0.7.4",
+    "cordova-plugin-compat": "1.2.0",
+    "cordova-plugin-file-transfer": "1.5.1"
+  }
+}
