@@ -48,6 +48,24 @@
     }
 };
 
+function scanBarcode(){
+
+cordova.plugins.barcodeScanner.scan(
+  function (result) {
+   /*   alert("We got a barcode\n" +
+            "Result: " + result.text + "\n" +
+            "Format: " + result.format + "\n" +
+            "Cancelled: " + result.cancelled);*/
+			document.getElementById("code_barre").innerHTML =  result.text; 
+			
+  }, 
+  
+  function (error) {
+      alert("Scanning failed: " + error);
+  }
+ );
+}
+
 
 		
 

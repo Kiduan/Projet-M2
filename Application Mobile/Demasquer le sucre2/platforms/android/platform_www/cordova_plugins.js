@@ -517,6 +517,14 @@ module.exports = [
     "clobbers": [
       "window.FileTransfer"
     ]
+  },
+  {
+    "id": "cordova-plugin-barcodescanner.BarcodeScanner",
+    "file": "plugins/cordova-plugin-barcodescanner/www/barcodescanner.js",
+    "pluginId": "cordova-plugin-barcodescanner",
+    "clobbers": [
+      "cordova.plugins.barcodeScanner"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -541,7 +549,8 @@ module.exports.metadata =
   "cordova-plugin-statusbar": "2.1.3",
   "cordova-plugin-vibration": "2.1.6",
   "cordova-plugin-file-transfer": "1.5.1",
-  "cordova-plugin-whitelist": "1.2.2"
+  "cordova-plugin-whitelist": "1.2.2",
+  "cordova-plugin-barcodescanner": "0.7.4"
 };
 // BOTTOM OF METADATA
 });
