@@ -1,7 +1,7 @@
 <?php
     /* ------------------------------------------------------- */
-    /* Frogi-secure   Baron Corentin   2016                    */
-    /* Site : Frogi-secure distributeur                        */
+    /* Frogi-secure   Baron Corentin   2019                    */
+    /* Site : Démasquer le Sucre                               */
     /*                                                         */ 
     /* Description du fichier : Fichier fonction class Pdo     */
     /*                                                         */
@@ -43,7 +43,23 @@ class PdoBDD{
      * @return array liste de la colonne que l'on recherche
      */
     public function recupBdd($valeur, $bdd) {
-        $req = "SELECT " . $valeur . " FROM  " . $bdd;
+        $req = "SELECT " . $valeur . " FROM  " . $bdd . " ORDER BY email ASC";
+        $cmd = $this->monPdo->query($req);
+        $tab = $cmd->fetchAll();
+        $cmd->closeCursor();
+        return $tab;
+    }
+    
+    /** 
+     * recupère dans la bdd la colonne de la valeur demander pour l'admin                   
+     * 
+     * envoie une requete sql pour recupérer les informations de la colonne demandé
+     * @param string valeur colonne que l'on cherche dans la table
+     * @param string bdd nom de la table dans la bdd
+     * @return array liste de la colonne que l'on recherche
+     */
+    public function recupBdd_admin($valeur, $bdd) {
+        $req = "SELECT " . $valeur . " FROM  " . $bdd . " ORDER BY nom ASC";
         $cmd = $this->monPdo->query($req);
         $tab = $cmd->fetchAll();
         $cmd->closeCursor();
@@ -61,7 +77,7 @@ class PdoBDD{
      * @return array liste obtenue
      */
     public function recupListe($id, $tri, $ordre) {//recup all avec where id=$id
-        $req = "SELECT  nom,email,date_inscription,vip,temps FROM client ORDER BY " . $tri . " " .  $ordre;
+        $req = "SELECT  nom,email,date_inscription,vip,temps FROM client WHERE actif IS TRUE ORDER BY " . $tri . " " .  $ordre;
         $cmd = $this->monPdo->query($req);
         $liste = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
         $cmd->closeCursor();
@@ -135,7 +151,7 @@ class PdoBDD{
         }else $Temps="temps";
        
         $req = "SELECT  nom,email,date_inscription,vip,temps FROM client 
-        WHERE ".$Nom." LIKE '%".$Rnom."%' AND ".$Email." LIKE '".$Remail."%' AND ".$Vip." LIKE '".$Rvip."' ";
+        WHERE actif IS TRUE AND ".$Nom." LIKE '%".$Rnom."%' AND ".$Email." LIKE '".$Remail."%' AND ".$Vip." LIKE '".$Rvip."' ";
         if ($DateI!='""')
             $req .= "AND ".$DateI." >= '".$RdateI."' ";
         if ($DateS!='""')
@@ -155,54 +171,7 @@ class PdoBDD{
     }
     
     /** 
-     * recupère les info principal du client                   
-     * 
-     * @param string id de l'utilisateur connecté
-     * @param string email de l'utilisateur connecté
-     * @return array liste obtenu
-     */
-    public function recupInfo_client($id, $email)   {
-        $req = "SELECT * FROM frogi_client_distri WHERE Id='".$id."' AND email='".$email."'";
-        $cmd = $this->monPdo->query($req);
-        $info = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
-        $cmd->closeCursor();
-        if($info)
-            return $info[0];
-    }
-    
-    /** 
-     * recupère toutes les info du boitier du client                   
-     * 
-     * @param string num numéro du client dont on recherche les informations
-     * @return array liste obtenu
-     */
-    public function recupInfoClient($num)   {
-        $req = "SELECT * FROM client_info WHERE num='".$num."'";
-        $cmd = $this->monPdo->query($req);
-        $info = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
-        $cmd->closeCursor();
-        if($info)
-            return $info[0];
-    }
-    
-    /** 
-     * recupère le numéro du client                  
-     * 
-     * @param string id l'utilisateur connecté
-     * @param string serial numéro de serie du boitier
-     * @return le numéro du client
-     */
-    public function recupNum($id, $serial)  {
-        $req = "SELECT num FROM frogi_client_distri WHERE Id='".$id."'AND serial='".$serial."'";
-        $cmd = $this->monPdo->query($req);
-        $num = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
-        $cmd->closeCursor();
-        if($num)
-            return $num[0]['num'];
-    }
-    
-    /** 
-     * recupère une information d'un admin ou d'un utilisateur                  
+     * recupère une information d'un admin              
      * 
      * @param string info information que l'on recherche
      * @param string bdd nom de la table où on recherche des informations
@@ -219,7 +188,7 @@ class PdoBDD{
     }
     
         /** 
-     * recupère une information d'un client ou d'un utilisateur                  
+     * recupère une information d'un client                
      * 
      * @param string info information que l'on recherche
      * @param string bdd nom de la table où on recherche des informations
@@ -228,6 +197,23 @@ class PdoBDD{
      */
     public function recupUtilisateur_client($info, $bdd,$id) {
         $req = "SELECT ".$info." FROM ".$bdd." WHERE client_id='".$id."'";
+        $cmd = $this->monPdo->query($req);
+        $recup = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
+        $cmd->closeCursor();
+        if($recup)
+            return $recup[0][$info];
+    }
+    
+    /** 
+     * recupère une information d'un client                
+     * 
+     * @param string info information que l'on recherche
+     * @param string bdd nom de la table où on recherche des informations
+     * @param string id id de l'utilisateur dont on recherche des informations
+     * @return array liste obtenu
+     */
+    public function recupUtilisateur_client_email($info, $bdd,$email) {
+        $req = "SELECT ".$info." FROM ".$bdd." WHERE email='".$email."'";
         $cmd = $this->monPdo->query($req);
         $recup = $cmd->fetchAll(PDO::FETCH_ASSOC);//ordonne le résultat en tableau associatif
         $cmd->closeCursor();
@@ -248,6 +234,36 @@ class PdoBDD{
         $req = "UPDATE ".$bdd." SET ".$champ."='".$nv."' WHERE ".$where."='".$valeur."'";
         $this->monPdo->exec($req);
     }
+    
+    /** 
+     * insert le nouvel utilisateur                 
+     * 
+     * @param string nom 
+     * @param string mdp 
+     * @param string email 
+     * @param string dt date d'incription
+     * @param string bdd nom de la table où l'on veut insert
+     */
+    public function insert($nom, $mdp, $email, $dt, $bdd) {
+        $req = "INSERT INTO ".$bdd." (nom,mdp,email,date_inscription,vip,temps,mdp_modif_allow,actif) VALUES ('".$nom."','".$mdp."','".$email."','".$dt."','false',0,0,0)";
+        $this->monPdo->exec($req);
+    }
+
+    /** 
+     * Delete le nouvel utilisateur                 
+     * 
+     * @param string nom 
+     * @param string mdp 
+     * @param string email 
+     * @param string dt date d'incription
+     * @param string bdd nom de la table où l'on veut insert
+     */
+    public function delete($bdd) {
+        $req = "DELETE FROM ".$bdd." WHERE TIMESTAMPDIFF(hour,date_inscription,now())>=4 AND actif IS FALSE";
+        echo $req; 
+        //$this->monPdo->exec($req);
+    }
+    
 }
 
 ?>

@@ -15,14 +15,16 @@
     $pdoExetud = new PdoBDD("localhost", "test", "isen29", "bdd_sucre");
     $nom=lireDonneePost('nom');
     $Amdp=lireDonneePost('Amdp');
+    $Amdp=$Amdp."FarineEtudiantDomestiqueTours";
     $MDPbasse=$pdoExetud->recupUtilisateur_client("mdp", "client",$_SESSION['Id']);
     $AmdpCrypte=crypt($Amdp, $MDPbasse);
     $mdp1=lireDonneePost('mdp1');
+    $mdp1=$mdp1."FarineEtudiantDomestiqueTours";
     $mdp1Crypte= crypt($mdp1, $MDPbasse);
     $mdp2=lireDonneePost('mdp2');
+    $mdp2=$mdp2."FarineEtudiantDomestiqueTours";
     $mdp2Crypte= crypt($mdp2, $MDPbasse);
     $email=lireDonneePost('email');
-    echo "<script>alert(\"ampdCrypte=".$AmdpCrypte."\")</script>";
     if ($AmdpCrypte== $pdoExetud->recupUtilisateur_client("mdp", "client",$_SESSION['Id'])) {//si il a rentré le bon mdp
         if($nom!="") {
             $pdoExetud->update("nom", "client_id", "client", $nom, $_SESSION['Id']);

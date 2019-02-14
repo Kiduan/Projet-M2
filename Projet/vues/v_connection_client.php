@@ -28,7 +28,7 @@
             <div class="login-box-name">mot de passe:</div>
             <div class="login-box-field"><input name="mdp" class="form-login-admin" title="mot de passe:" value="" size="30" required="" maxlength="30" type="password"></div>
             <div><input class="box_submit" name="submit" value="connexion" type="submit"></div><br><br>
-            <span class="js-btn btn mdp_oublier">Mot de passe oublié ?</span>
+            <span class="js-btn btn mdp_oublier">Mot de passe oublié ?</span><a href="index.php?uc=inscription">Nouveau client ?</a>
                 </div>
             </div>
 		</div>

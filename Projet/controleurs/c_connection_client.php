@@ -20,6 +20,7 @@
         $mail_verif = verifMail($pdoExetud, $email);
         if ($mail_verif == 0) {//true
                 $new_mdp = random(8);
+                $new_mdp = $new_mdp."FarineEtudiantDomestiqueTours";
                 $new_mdp_c = crypt($new_mdp);
                 // envoi du mail avec identifiant et mot de passe du user
                 $subject = "Nouveau mot de passe";
@@ -31,19 +32,23 @@
         $pdoExetud = new PdoBDD("localhost", "test", "isen29", "bdd_sucre");
         $email=lireDonneePost('email');
         $mdp=lireDonneePost('mdp');
+        $mdp=$mdp."FarineEtudiantDomestiqueTours";
         $verif = verifUser_client($pdoExetud, $email, $mdp);
-        if ($verif == 0) {//si true alors on initialise les variables de session
-            $_SESSION['Admin']="no";
-            $_SESSION['Nom'] = $pdoExetud->recupUtilisateur_client("nom", "client",$pdoExetud->recupId_client($email));
-            $_SESSION['Email'] = $email;
-            $_SESSION['Mdp']= $mdp;
-            $_SESSION['Date_inscription']= $pdoExetud->recupUtilisateur_client("date_inscription", "client",$pdoExetud->recupId_client($email));
-            $_SESSION['Vip']= $pdoExetud->recupUtilisateur_client("vip", "client",$pdoExetud->recupId_client($email));
-            $_SESSION['Temps']= $pdoExetud->recupUtilisateur_client("temps", "client",$pdoExetud->recupId_client($email));
-            $_SESSION['Id'] = $pdoExetud->recupId_client($email);
-            $_SESSION['Erreur'] = "no";//pas d'erreur donc utilisateur connecté et on affiche alors la page d'acceuil
+        $actif = $pdoExetud->recupUtilisateur_client("actif", "client", $pdoExetud->recupId_client($email));
+        if($actif==1) {
+            if ($verif == 0) {//si true alors on initialise les variables de session
+                $_SESSION['Admin']="no";
+                $_SESSION['Nom'] = $pdoExetud->recupUtilisateur_client("nom", "client",$pdoExetud->recupId_client($email));
+                $_SESSION['Email'] = $email;
+                $_SESSION['Mdp']= $mdp;
+                $_SESSION['Date_inscription']= $pdoExetud->recupUtilisateur_client("date_inscription", "client",$pdoExetud->recupId_client($email));
+                $_SESSION['Vip']= $pdoExetud->recupUtilisateur_client("vip", "client",$pdoExetud->recupId_client($email));
+                $_SESSION['Temps']= $pdoExetud->recupUtilisateur_client("temps", "client",$pdoExetud->recupId_client($email));
+                $_SESSION['Id'] = $pdoExetud->recupId_client($email);
+                $_SESSION['Erreur'] = "no";//pas d'erreur donc utilisateur connecté et on affiche alors la page d'acceuil
 
-        }else $_SESSION['Erreur'] = "mdp_erreur";//erreur donc on affichera la page de connection avec un alert
+            }else $_SESSION['Erreur'] = "mdp_erreur";//erreur donc on affichera la page de connection avec un alert
+        }else $_SESSION['Erreur'] = "email_pas_valider";
     } 
     header("Location:../index.php");
 ?>

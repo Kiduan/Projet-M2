@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+   <HEAD>
+      <TITLE>
+         test
+      </TITLE>
+   </HEAD>
+<BODY>
+   <H1>test button</H1>
+    <input class="test"
+       type="button"
+       value="Add to favorites" onclick="button_onclick()">
+</BODY>
+</HTML>
+
+<script>
+function button_onclick() {
+    var variable = new XMLHttpRequest();
+
+    variable.onreadystatechange= function() {
+            if(variable.readyState == 4 && (variable.status == 200 || variable.status == 0)) {
+                alert(variable.responseText);
+            }
+        }; 
+    variable.open("POST", "authentification.php", true);
+
+    variable.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    variable.setRequestHeader("X-Requested-With","XMLHttpRequest");
+    variable.send("email=client@test.fr&mdp=test");     
+    //alert(variable.);
+}
+
+ 
+    
+</script>

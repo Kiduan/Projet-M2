@@ -10,11 +10,11 @@
     /* Cette page liste dans un tableau tout les clients liés à*/
     /* l'utilisateur connecté.                                 */
     /* ------------------------------------------------------- */-->
-<div class="titrecentre">Info client</div>
+<div class="titrecentre">Bonjour <?php echo $_SESSION['Nom']?></div>
 
     <div class="fcentre">
         <?php 
-        echo "Admin=".$_SESSION['Admin']."</br>";
+        /*echo "Admin=".$_SESSION['Admin']."</br>";
         echo "Nom=".$_SESSION['Nom']."</br>";
         echo "Email=".$_SESSION['Email']."</br>";
         echo "Mdp=".$_SESSION['Mdp']."</br>";
@@ -22,9 +22,12 @@
         echo "Vip=".$_SESSION['Vip']."</br>";
         echo "Temps=".$_SESSION['Temps']."</br>";
         echo "Id=".$_SESSION['Id']."</br>";
-        echo "Erreur=".$_SESSION['Erreur']."</br>";
+        echo "Erreur=".$_SESSION['Erreur']."</br>";*/
+        echo "<label for='TEMPS' class='param_libelleR'>Temps restant : </label>";
+        echo "<label for='TEMPS' class='param_valeurR'>", $_SESSION['Temps'] ," jours</label>";
         ?>
-                     
+                <div class='clear'></div>
+        <a   class="boxcompte" href="index.php?uc=temps">En ajouter ?</a>         
         <div class='clear'></div>
 </div>  
                      

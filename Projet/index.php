@@ -99,13 +99,24 @@
                         echo "<script>alert(\"Email envoyé!\")</script>";   break;
                     case 'email_erreur':
                         echo "<script>alert(\"Email incorrect\")</script>";   break;
+                    case 'email_pas_valider':
+                        echo "<script>alert(\"Email pas validé\")</script>";   break;
+                    case 'email_existe':
+                        echo "<script>alert(\"Ce compte existe déjà\")</script>";   break;
+                    case 'creation_compte':
+                        echo "<script>alert(\"Un email de confirmation a été envoyé à votre adresse\")</script>";   break;
                     default : break;
                 }
             }
             $uc = lireDonneeUrl('uc');
-            if ($uc=="admin") {
-                include("vues/v_connection.php");
-            }else include("vues/v_connection_client.php");
+            switch($uc) {
+                case 'admin':include("vues/v_connection.php");
+                    break;
+                case 'inscription':include("vues/v_inscription.php");
+                    break;
+                default: include("vues/v_connection_client.php");
+                    break;
+            }
         }
     ?><div style="padding:20px;margin-bottom:5px;"></div>
 </header>

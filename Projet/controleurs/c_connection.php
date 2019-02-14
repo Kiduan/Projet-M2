@@ -18,6 +18,7 @@
         $pdoExetud = new PdoBDD("localhost", "test", "isen29", "bdd_sucre");
         $nom=lireDonneePost('nom');
         $mdp=lireDonneePost('mdp');
+        $mdp=$mdp."FarineEtudiantDomestiqueTours";
         $verif = verifUser($pdoExetud, $nom, $mdp);
         if ($verif == 0) {//si true alors on initialise les variables de session
             $_SESSION['Admin']="yes";
