@@ -113,5 +113,5 @@
     <allow-navigation href="data:*" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.5.1" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.2" />
-    <engine name="android" spec="~7.1.4" />
+    <engine name="android" spec="^7.1.4" />
 </widget>

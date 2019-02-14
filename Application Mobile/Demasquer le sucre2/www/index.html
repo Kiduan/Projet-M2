@@ -32,7 +32,7 @@
 </div>
 
 <div class="container"  align="center">
-        <form onsubmit="authentification" method="post" id="form">
+        <form method="post" id="form">
             <h3>Adresse mail</h3>
             <input type="text" name="mail" id="mail" class="form-control">
             <h3>Mot de passe</h3>
@@ -43,10 +43,11 @@
 </div>
 
 <script>
-    app.initialize();
-
+   
+	
 
     $("#form").submit(function (e) {
+		localStorage.setItem("flagScan","False");
         var form = $(this);
         var url = form.attr('action');
         $.ajax({

@@ -6,33 +6,15 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
 
-<button onclick="scanBarcode()">Scan</button>
-<p id="demo"></p>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script>
-    function scanBarcode(){
 
-cordova.plugins.barcodeScanner.scan(
-  function (result) {
-   /*   alert("We got a barcode\n" +
-            "Result: " + result.text + "\n" +
-            "Format: " + result.format + "\n" +
-            "Cancelled: " + result.cancelled);*/
-			document.getElementById("demo").innerHTML =  result.text; 
-			
-  }, 
-  
-  function (error) {
-      alert("Scanning failed: " + error);
-  }
- );
-}
-
-    </script>
-
+<p id="code_barre"></p>
+<script>
+window.onload = scanBarcode;
+</script>
 </body>
 </html>

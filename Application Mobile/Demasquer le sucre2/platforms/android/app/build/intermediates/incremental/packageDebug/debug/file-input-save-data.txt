@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Feb 12 16:21:15 CET 2019
+#Tue Feb 12 17:43:19 CET 2019
 2.path=www/res/icon/ios/icon-40@2x.png
 14.set=ASSET
 107.baseType=DIRECTORY
@@ -28,7 +28,7 @@
 34.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 88.set=ASSET
 86.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-56.path=www/plugins/cordova-plugin-battery-status/www/battery.js
+56.path=www/js/bootstrap.min.js
 48.baseType=DIRECTORY
 94.baseType=DIRECTORY
 61.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
@@ -80,7 +80,7 @@
 98.set=ASSET
 87.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 10.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-57.path=www/js/bootstrap.min.js
+57.path=www/plugins/cordova-plugin-battery-status/www/battery.js
 32.path=www/plugins/cordova-plugin-camera/www/Camera.js
 84.path=www/plugins/cordova-plugin-file/www/android/FileSystem.js
 147.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
@@ -264,7 +264,7 @@
 57.set=ASSET
 77.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 69.baseType=DIRECTORY
-47.path=www/plugins/cordova-plugin-device-orientation/www/CompassHeading.js
+47.path=www/css/bootstrap.min.css
 52.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 99.path=www/plugins/cordova-plugin-contacts/www/contacts.js
 22.path=www/cordova-js-src/android/nativeapiprovider.js
@@ -319,7 +319,7 @@
 67.set=ASSET
 9.set=ASSET
 78.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-48.path=www/res/icon/android/drawable-xxxhdpi-icon.png
+48.path=www/plugins/cordova-plugin-device-orientation/www/CompassHeading.js
 53.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 23.path=www/res/screen/ios/Default-667h.png
 75.path=www/spec/lib/jasmine-1.2.0/MIT.LICENSE
@@ -375,7 +375,7 @@ count=156
 77.set=ASSET
 68.baseType=DIRECTORY
 79.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-49.path=www/css/bootstrap.min.css
+49.path=www/res/icon/android/drawable-xxxhdpi-icon.png
 54.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 24.path=www/res/screen/ios/Default-Portrait~ipad.png
 51.baseType=DIRECTORY
@@ -533,7 +533,7 @@ count=156
 127.path=www/res/screen/android/drawable-port-ldpi-screen.png
 132.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 102.path=www/plugins/cordova-plugin-media-capture/www/capture.js
-154.path=www/css/jquery.mobile-1.4.5.min.css
+154.path=www/css/bootstrap-theme.min.css
 151.set=ASSET
 0.baseType=DIRECTORY
 153.baseType=DIRECTORY
@@ -585,7 +585,7 @@ count=156
 128.path=www/plugins/cordova-plugin-contacts/www/ContactName.js
 133.base=C\:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 103.path=www/res/icon/windows/Square71x71Logo.scale-240.png
-155.path=www/css/bootstrap-theme.min.css
+155.path=www/css/jquery.mobile-1.4.5.min.css
 130.path=www/plugins/cordova-plugin-file/www/DirectoryEntry.js
 66.baseType=DIRECTORY
 122.set=ASSET

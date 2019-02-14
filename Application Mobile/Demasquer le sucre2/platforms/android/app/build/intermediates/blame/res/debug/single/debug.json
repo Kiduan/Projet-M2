@@ -76,12 +76,12 @@
         "source": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.png"
     },
     {
-        "merged": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_icon.png.flat",
-        "source": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\src\\main\\res\\mipmap-ldpi\\icon.png"
-    },
-    {
         "merged": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-hdpi_screen.png.flat",
         "source": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\src\\main\\res\\drawable-port-hdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_icon.png.flat",
+        "source": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\src\\main\\res\\mipmap-ldpi\\icon.png"
     },
     {
         "merged": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-mdpi_screen.png.flat",
@@ -148,12 +148,12 @@
         "source": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\src\\main\\res\\drawable\\share_via_barcode.png"
     },
     {
-        "merged": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_remove.png.flat",
-        "source": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_remove.png"
-    },
-    {
         "merged": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_history_list_item.xml.flat",
         "source": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\src\\main\\res\\layout\\history_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_remove.png.flat",
+        "source": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_remove.png"
     },
     {
         "merged": "C:\\Users\\noureddine\\Desktop\\CIPA5\\Projet\\Projet-M2\\Application Mobile\\Demasquer le sucre2\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_encode.xml.flat",
