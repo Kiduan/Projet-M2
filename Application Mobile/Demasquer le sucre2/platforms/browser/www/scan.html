@@ -1,20 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <!-- Meta tags -->
     <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-	<script type="text/javascript" src="cordova.js"></script>
+    <meta name="author" content="Noureddine ADJOU" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Debuger -->
+	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.7.30/ ">
+
+    <!-- Title -->
+    <title>Démasquer le sucre</title>
+	
+    <!-- Css Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <!--- -->
+	<script type="text/javascript" src="js/jQuery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="js/jquery.p2r.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-</head>
+	<script type="text/javascript" src="cordova.js"></script>
+	
+
+	
+
+
+<!-- Header -->
+
 <body>
-
-
-<p id="code_barre"></p>
+<p id="sucre">  </p>
+<button onclick="goBack()">Go Back</button>
 <script>
-window.onload = scanBarcode;
+// <a href="accueil.html">Go Back</a>
+document.getElementById("sucre").innerHTML=	localStorage.getItem("sucre");
+
+if( localStorage.getItem("sucre").indexOf('-1')!=-1 )
+{		
+
+	   var variable = new XMLHttpRequest();
+
+    variable.onreadystatechange= function() {
+            if(variable.readyState == 4 && (variable.status == 200 || variable.status == 0)) {
+                document.write(variable.responseText);
+           
+				
+				
+		   }
+        };
+    variable.open("POST", "http://172.31.7.30/api/code_barre.php", true);
+
+    variable.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    variable.setRequestHeader("X-Requested-With","XMLHttpRequest");
+    variable.send("code="+localStorage.getItem("code"));
+	localStorage.setItem("sucre",variable.responseText);
+	function goBack() {
+  window.history.back();
+}
+	
+}
+
 </script>
+
+
+
+
+ 
+<br>
+
+
+
+
+
+
 </body>
 </html>

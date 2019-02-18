@@ -7,7 +7,7 @@
     <meta name="author" content="Noureddine ADJOU" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!-- Debuger -->
-	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.4.106/ ">
+	  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.7.30/ ">
 
     <!-- Title -->
     <title>Démasquer le sucre</title>
@@ -26,6 +26,13 @@
 </head>
 
 <!-- Header -->
+
+<body>
+<script>
+
+
+
+</script>
 <div class="page-header container" align="center">
   <h1>Bonjour *Nom user*</h1>
 </div>
@@ -34,13 +41,23 @@
 </div>
 
 <div class="container temps" align="center">
-  <img src="img/barcode.png" height="200px" width="150px" onclick="scanBarcode()"> 
+ <img src="img/barcode.png" height="200px" width="150px" onclick="scanBarcode()"> 
   
-  <!--  <a href ="scan.html"> <img src="img/barcode.png" height="200px" width="150px"></a> -->
+  <!-- <a href ="scan.html"> <img src="img/barcode.png" height="200px" width="150px"></a> -->
   <br><br>
   <h3>Temps restant : *duree*</h3>
   <a class="btn btn-primary" href="#" role="button">Acheter du temps</a>
- 
+ <script>
+
+ if(localStorage.getItem("flagScan").indexOf('True')!=-1)
+	{
+	
+	localStorage.setItem("flagScan","False");
+
+	window.location.replace("scan.html");
+	
+	}
+</script>
 </div>
 </body>
 </html>

@@ -59,7 +59,10 @@ cordova.plugins.barcodeScanner.scan(
 			
 
 			localStorage.setItem("flagScan", "True");
-			localStorage.setItem("resultCodeBarre", result.text);
+			localStorage.setItem("code", result.text);
+			
+
+			location.reload();
 			
 			
   }, 
@@ -71,7 +74,7 @@ cordova.plugins.barcodeScanner.scan(
 }
 
 
-		
+
 
 
 

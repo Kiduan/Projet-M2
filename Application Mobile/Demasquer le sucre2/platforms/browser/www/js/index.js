@@ -56,7 +56,14 @@ cordova.plugins.barcodeScanner.scan(
             "Result: " + result.text + "\n" +
             "Format: " + result.format + "\n" +
             "Cancelled: " + result.cancelled);*/
-			document.getElementById("code_barre").innerHTML =  result.text; 
+			
+
+			localStorage.setItem("flagScan", "True");
+			localStorage.setItem("code", result.text);
+			
+
+			location.reload();
+			
 			
   }, 
   
@@ -67,7 +74,7 @@ cordova.plugins.barcodeScanner.scan(
 }
 
 
-		
+
 
 
 

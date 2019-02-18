@@ -7,7 +7,7 @@
     <meta name="author" content="Noureddine ADJOU" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!-- Debuger -->
-	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.4.106/ ">
+	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.7.30/ https://static.openfoodfacts.org" >
 
     <!-- Title -->
     <title>Démasquer le sucre</title>
@@ -24,16 +24,55 @@
 	
 
 	
-</head>
+
 
 <!-- Header -->
 
-<body>
-<p id="resultCodeBarre"></p>
+<body  onload="getSucre()" >
+<div id="sucre"> 
+</div>
+<div>
+<img src="https://static.openfoodfacts.org/images/products/544/900/000/0996/front_fr.348.400.jpg" alt="Italian Trulli">
+<a href="accueil.html">retour à l'accueil</a>
+
+</div>
 <script>
-localStorage.setItem("flagScan", "False");
-document.getElementById("resultCodeBarre").innerHTML = localStorage.getItem("resultCodeBarre")
+// <a href="accueil.html">Go Back</a>
+//document.getElementById("sucre").innerHTML=	localStorage.getItem("sucre");
+
+
+
+function getSucre()
+{
+   $.ajax({
+
+     type: "POST",
+     url: 'http://172.31.7.30/api/code_barre.php',
+     data: "code="+localStorage.getItem("code"), // appears as $_GET['id'] @ your backend side
+     success: function(data) {
+           // data is ur summary
+          $('#sucre').html(data);
+     }
+
+   });
+
+}
+
+
+
+
+
 </script>
+
+
+
+
+ 
+<br>
+
+
+
+
 
 
 </body>

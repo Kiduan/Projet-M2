@@ -7,7 +7,7 @@
     <meta name="author" content="Noureddine ADJOU" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!-- Debuger -->
-	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.4.106/ ">
+	  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.7.30/ ">
 
     <!-- Title -->
     <title>Démasquer le sucre</title>
@@ -20,16 +20,15 @@
 	<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
 	<script type="text/javascript" src="js/jquery.p2r.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="cordova.js"></script>
-	
+	 <script type="text/javascript" src="cordova.js"></script>
 
-	
+
 </head>
+
 <!-- Header -->
 
 <body>
 <script>
-
 
 
 
@@ -49,10 +48,14 @@
   <h3>Temps restant : *duree*</h3>
   <a class="btn btn-primary" href="#" role="button">Acheter du temps</a>
  <script>
+
  if(localStorage.getItem("flagScan").indexOf('True')!=-1)
 	{
+	
+	localStorage.setItem("flagScan","False");
+
 	window.location.replace("scan.html");
-	localStorage.setItem("flagScan", "False");
+	
 	}
 </script>
 </div>
