@@ -7,7 +7,7 @@
     <meta name="author" content="Noureddine ADJOU" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!-- Debuger -->
-	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.7.30/ " >
+	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; img-src  https://static.openfoodfacts.org/ 'self'; connect-src 'self' http://172.31.7.30/ " >
 
     <!-- Title -->
     <title>Démasquer le sucre</title>
@@ -32,7 +32,8 @@
 <div id="sucre"> 
 </div>
 <div>
-<!--<img src="https://static.openfoodfacts.org/images/products/544/900/000/0996/front_fr.348.400.jpg" alt="Italian Trulli">-->
+<img id="my_image">
+<br>
 <a href="accueil.html">retour à l'accueil</a>
 
 </div>
@@ -46,12 +47,15 @@ function getSucre()
 {
    $.ajax({
 
-     type: "POST",
+     type: "GET",
      url: 'http://172.31.7.30/api/code_barre.php',
      data: "code="+localStorage.getItem("code"), // appears as $_GET['id'] @ your backend side
      success: function(data) {
-           // data is ur summary
-          $('#sucre').html(data);
+    var obj = JSON.parse(data);      
+	var morceaux = Math.round(parseFloat(obj.morceaux));
+	var image = obj.url;
+          $('#sucre').html(morceaux);
+		  $("#my_image").attr("src",image);
      }
 
    });
