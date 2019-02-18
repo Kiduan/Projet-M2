@@ -22,8 +22,8 @@ if ( $payment_status == "Completed") {
     try
     {
         $host = 'mysql:host=localhost;dbname=bdd_sucre'; 
-        $utilisateur = 'root';
-        $mdp = '';
+        $utilisateur = 'test';
+        $mdp = 'isen29';
         $connection = new PDO ( $host, $utilisateur, $mdp); 
     } catch ( Exception $e )
     {
