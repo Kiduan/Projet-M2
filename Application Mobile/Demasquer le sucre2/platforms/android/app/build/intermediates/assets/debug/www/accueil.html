@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
 	<script type="text/javascript" src="js/jquery.p2r.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-	 <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
 
 
 </head>
@@ -28,27 +28,25 @@
 <!-- Header -->
 
 <body>
-<script>
 
-
-
-</script>
 <div class="page-header container" align="center">
-  <h1>Bonjour *Nom user*</h1>
+  <h1 id="nom">  </h1>
 </div>
 
-<div class="container scan" align="center">
-</div>
 
 <div class="container temps" align="center">
  <img src="img/barcode.png" height="200px" width="150px" onclick="scanBarcode()"> 
   
   <!-- <a href ="scan.html"> <img src="img/barcode.png" height="200px" width="150px"></a> -->
   <br><br>
-  <h3>Temps restant : *duree*</h3>
+  <h3 id="temps"> </h3>
   <a class="btn btn-primary" href="#" role="button">Acheter du temps</a>
+  <br>
+  <br>
+  <a class="btn btn-primary" role="button" onclick="deconnexion()">Deconnexion</a>
  <script>
-
+document.getElementById("nom").innerHTML = "Bonjour "+localStorage.getItem("nom"); 
+document.getElementById("temps").innerHTML = "Temps restant :"+localStorage.getItem("temps")+" jours"; 
  if(localStorage.getItem("flagScan").indexOf('True')!=-1)
 	{
 	

@@ -73,6 +73,17 @@ cordova.plugins.barcodeScanner.scan(
  );
 }
 
+	function deconnexion()
+	{
+		localStorage.removeItem("nom");
+		localStorage.removeItem("code");
+		localStorage.removeItem("temps");
+		localStorage.removeItem("flagScan");
+		localStorage.removeItem("sucre");
+		window.location.replace("index.html");
+
+	}
+
 
 
 

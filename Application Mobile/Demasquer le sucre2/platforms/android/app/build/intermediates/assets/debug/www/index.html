@@ -34,9 +34,9 @@
 <div class="container"  align="center">
         <form method="post" id="form">
             <h3>Adresse mail</h3>
-            <input type="text" name="email" id="email" class="form-control">
+            <input type="text" name="email" id="email" class="form-control" required>
             <h3>Mot de passe</h3>
-            <input type="password" name="mdp" id="mdp" class="form-control">
+            <input type="password" name="mdp" id="mdp" class="form-control" required>
             <br><br>
             <input class="btn btn-primary" type="submit" value="Se connecter">
         </form>
@@ -58,14 +58,20 @@
             data: form.serialize(), // serializes the form's elements.
             success: function (data) {
                 /*Selon data on se redérecte vers l'accueil*/
-				if (data.indexOf('True') != -1)
+				if (data.indexOf('False') != -1)
 				{
-					window.location.replace("accueil.html");
+					alert("Erreur d'authentification");
+					window.location.replace("index.html");
+				
 				}
 				else
 				{
-                alert("Erreur d'authentification");
-				window.location.replace("index.html");
+					var obj = JSON.parse(data); 
+					
+					localStorage.setItem("nom",obj.nom);
+					localStorage.setItem("temps",obj.temps);
+					window.location.replace("accueil.html");
+
 				}
                 //if(data.localeCompare("root1234adj")==0)
             }
