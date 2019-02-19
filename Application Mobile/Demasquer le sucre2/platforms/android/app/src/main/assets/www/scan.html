@@ -54,10 +54,12 @@ function getSucre()
      data: "code="+localStorage.getItem("code"), // appears as $_GET['id'] @ your backend side
      success: function(data) {
     var obj = JSON.parse(data);      
-	var morceaux = Math.round(parseFloat(obj.morceaux));
+	localStorage.setItem("morceaux",Math.round(parseFloat(obj.morceaux))); ;
 	var image = obj.url;
-          $('#sucre').html(morceaux);
-		  $("#my_image").attr("src",image);
+       /*   $('#sucre').html(morceaux);
+		  $("#my_image").attr("src",image);*/
+		  window.location.replace("scan2.html");
+		  
      }
 
    });

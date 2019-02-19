@@ -135,15 +135,15 @@ src="img/sugar_block.png" style="display:none">
                 var img = document.getElementById("sugar");
                 //ctx.drawImage(img, 10, 10);
 
-                drawSugar(22);
+                drawSugar();
 
 
             }
         }
-        function drawSugar(sugarQuantity){
+        function drawSugar(){
             var img = document.getElementById("sugar");
                
-          //document.getElementById("sucre");//.innerHTML;//=	localStorage.getItem("sucre");
+            var sugarQuantity=localStorage.getItem("morceaux");//document.getElementById("sucre");//.innerHTML;//=	localStorage.getItem("sucre");
             
             var i,j;
             var nb_max_width=Math.round((c_w * 4)/60); //nombre de sucre max a mettre par ligne
