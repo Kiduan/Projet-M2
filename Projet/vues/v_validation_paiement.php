@@ -16,6 +16,7 @@ $fp = fsockopen ('ssl://www.paypal.com', 443, $errno, $errstr, 30);
 // assign posted variables to local variables
 $payment_status = $_POST['payment_status'];
 $payment_amount = $_POST['mc_gross'];
+$client_id = $_SESSION['client_id'];
 
 if ( $payment_status == "Completed") {
     // On se connecte à la BDD
@@ -44,7 +45,7 @@ if ( $payment_status == "Completed") {
         SET temps = :temps
         WHERE client_id = :client_id;' );
     $requete->execute( array(
-        ':client_id' => $_POST['client_id'],
+        ':client_id' => $client_id,
         ':temps' => $temps
     ));
 }
