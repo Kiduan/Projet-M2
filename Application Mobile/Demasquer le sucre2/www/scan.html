@@ -53,11 +53,15 @@ function getSucre()
      url: 'http://172.31.7.30/api/code_barre.php',
      data: "code="+localStorage.getItem("code"), // appears as $_GET['id'] @ your backend side
      success: function(data) {
-    var obj = JSON.parse(data);      
-	localStorage.setItem("morceaux",Math.round(parseFloat(obj.morceaux))); ;
-	var image = obj.url;
-	window.location.replace("scan2.html");
-		  
+	 if(typeof JSON.parse(data) =='object')
+		{
+			var obj = JSON.parse(data);      
+			localStorage.setItem("morceaux",Math.round(parseFloat(obj.morceaux))); ;
+			var image = obj.url;
+			window.location.replace("scan2.html");
+		}
+		else 
+		alert("Le produit n'existe pas dans la base!");
      }
 
    });

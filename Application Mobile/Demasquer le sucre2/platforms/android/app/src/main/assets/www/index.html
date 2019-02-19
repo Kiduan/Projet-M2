@@ -58,21 +58,22 @@
             data: form.serialize(), // serializes the form's elements.
             success: function (data) {
                 /*Selon data on se redérecte vers l'accueil*/
-				if (data.indexOf('False') != -1)
-				{
-					alert("Erreur d'authentification");
-					window.location.replace("index.html");
-				
-				}
-				else
+				if(typeof JSON.parse(data) =='object')
 				{
 					var obj = JSON.parse(data); 
 					
 					localStorage.setItem("nom",obj.nom);
 					localStorage.setItem("temps",obj.temps);
-					window.location.replace("accueil.html");
-
+					window.location.replace("accueil.html")
+				
+				
 				}
+				else
+				{
+					alert("Erreur d'authentification");
+					window.location.replace("index.html");
+				}
+				
                 //if(data.localeCompare("root1234adj")==0)
             }
         });
