@@ -7,7 +7,7 @@
     <meta name="author" content="Noureddine ADJOU" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!-- Debuger -->
-	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.7.30/ ">
+	 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; img-src  https://static.openfoodfacts.org/ 'self'; connect-src 'self' http://172.31.7.30/ " >
 
     <!-- Title -->
     <title>Démasquer le sucre</title>
@@ -28,37 +28,49 @@
 
 <!-- Header -->
 
-<body>
-<p id="sucre">  </p>
-<button onclick="goBack()">Go Back</button>
+<body  onload="getSucre()" >
+<div id="sucre"> 
+</div>
+<div>
+<img id="my_image">
+<br>
+<a class="btn btn-primary" href="accueil.html" role="button">Retour à l'accueil</a>
+<br>
+<br>
+<a class="btn btn-primary" role="button" onclick="deconnexion()">Deconnexion</a>
+</div>
 <script>
 // <a href="accueil.html">Go Back</a>
-document.getElementById("sucre").innerHTML=	localStorage.getItem("sucre");
+//document.getElementById("sucre").innerHTML=	localStorage.getItem("sucre");
 
-if( localStorage.getItem("sucre").indexOf('-1')!=-1 )
-{		
 
-	   var variable = new XMLHttpRequest();
 
-    variable.onreadystatechange= function() {
-            if(variable.readyState == 4 && (variable.status == 200 || variable.status == 0)) {
-                document.write(variable.responseText);
-           
-				
-				
-		   }
-        };
-    variable.open("POST", "http://172.31.7.30/api/code_barre.php", true);
+function getSucre()
+{
+   $.ajax({
 
-    variable.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    variable.setRequestHeader("X-Requested-With","XMLHttpRequest");
-    variable.send("code="+localStorage.getItem("code"));
-	localStorage.setItem("sucre",variable.responseText);
-	function goBack() {
-  window.history.back();
+     type: "GET",
+     url: 'http://172.31.7.30/api/code_barre.php',
+     data: "code="+localStorage.getItem("code"), // appears as $_GET['id'] @ your backend side
+     success: function(data) {
+	 if(typeof JSON.parse(data) =='object')
+		{
+			var obj = JSON.parse(data);      
+			localStorage.setItem("morceaux",Math.round(parseFloat(obj.morceaux))); ;
+			var image = obj.url;
+			window.location.replace("scan2.html");
+		}
+		else 
+		alert("Le produit n'existe pas dans la base!");
+     }
+
+   });
+
 }
-	
-}
+
+
+
+
 
 </script>
 
