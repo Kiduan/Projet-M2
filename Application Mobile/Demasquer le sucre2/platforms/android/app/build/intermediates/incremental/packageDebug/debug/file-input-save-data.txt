@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Feb 20 15:31:52 CET 2019
+#Wed Feb 20 17:03:43 CET 2019
 2.path=www/res/icon/ios/icon-40@2x.png
 14.set=ASSET
 107.baseType=DIRECTORY

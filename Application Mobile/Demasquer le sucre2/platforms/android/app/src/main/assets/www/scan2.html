@@ -51,8 +51,12 @@
             </td>
         </tr>
         <tr>
-            <button onclick="location.href = 'accueil.html';" type="button" class="btn btn-info" style="width: 50%;">Retour à l'accueil</button>
-            <button onclick="reScanBarcode()" type="button" class="btn btn-success" style="width: 50%;">Nouveau scan</button>
+            <button onclick="location.href = 'accueil.html';" type="button" class="btn btn-success btn-lg" style="width: 50%; border: 1px solid black;">Retour
+                à l'accueil</button>
+            <button onclick="reScanBarcode()" type="button" class="btn btn-success btn-lg" style="width: 50%; border: 1px solid black">Nouveau
+                scan</button>
+            <button onclick="shoot()" type="button" class="btn btn-primary btn-lg" style="width: 100%; border: 1px solid black">Demasquer
+                le sucre</button>
         </tr>
     </table>
 
@@ -78,6 +82,8 @@
         var y = canvas.height / 2;
         var c_w = canvas.width / 6;
         var c_h = canvas.height / 6;
+
+        var flag_affiche_sucre = 0;
 
         function canvasPlayer() {
             if (myStream) {
@@ -128,7 +134,11 @@
                 ctx.lineTo(c_w * 5, c_h);
                 ctx.stroke();
 
-                drawSugar(); //Appel de la fonction d'affichage des morceaux de sucre
+                if (flag_affiche_sucre == 1) { //Si l'utilisateur a cliqué sur 'Demasquer le sucre' alors on affiche 
+                    drawSugar(); //Appel de la fonction d'affichage des morceaux de sucre
+                }
+
+
             }
         }
 
@@ -196,6 +206,11 @@
 
         function getInformation() {
             testVideo();
+        }
+
+        function shoot() {
+            flag_affiche_sucre = 1; //Passage à 1 de la variable pour afficher le sucre
+            myVideo.pause();
         }
     </script>
 </body>

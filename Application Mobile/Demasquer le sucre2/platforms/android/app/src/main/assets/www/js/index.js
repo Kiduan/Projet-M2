@@ -85,13 +85,50 @@ function deconnexion() {
 }
 
 
-function reScanBarcode(){
-    scanBarcode();
-    if (localStorage.getItem("flagScan").indexOf('True') != -1) {
 
-        localStorage.setItem("flagScan", "False");
 
-        window.location.replace("scan.html");
 
-    }
+function reScanBarcode() {
+
+    cordova.plugins.barcodeScanner.scan(
+        function (result) {
+            /*   alert("We got a barcode\n" +
+                     "Result: " + result.text + "\n" +
+                     "Format: " + result.format + "\n" +
+                     "Cancelled: " + result.cancelled);*/
+
+
+            localStorage.setItem("code", result.text);
+            getSucre();
+
+
+
+
+        },
+
+        function (error) {
+            alert("Scanning failed: " + error);
+        }
+    );
+}
+
+
+function getSucre() {
+    $.ajax({
+
+        type: "GET",
+        url: 'http://172.31.7.30/api/code_barre.php',
+        data: "code=" + localStorage.getItem("code"), 
+        success: function (data) {
+            if (typeof JSON.parse(data) == 'object') {
+                var obj = JSON.parse(data);
+                localStorage.setItem("morceaux", Math.round(parseFloat(obj.morceaux)));;
+                var image = obj.url;
+                window.location.replace("scan2.html");
+            } else
+                alert("Le produit n'existe pas dans la base!");
+        }
+
+    });
+
 }
