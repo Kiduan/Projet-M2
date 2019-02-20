@@ -16,27 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- var app = {
+var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -48,44 +48,50 @@
     }
 };
 
-function scanBarcode(){
+function scanBarcode() {
 
-cordova.plugins.barcodeScanner.scan(
-  function (result) {
-   /*   alert("We got a barcode\n" +
-            "Result: " + result.text + "\n" +
-            "Format: " + result.format + "\n" +
-            "Cancelled: " + result.cancelled);*/
-			
+    cordova.plugins.barcodeScanner.scan(
+        function (result) {
+            /*   alert("We got a barcode\n" +
+                     "Result: " + result.text + "\n" +
+                     "Format: " + result.format + "\n" +
+                     "Cancelled: " + result.cancelled);*/
 
-			localStorage.setItem("flagScan", "True");
-			localStorage.setItem("code", result.text);
-			
 
-			location.reload();
-			
-			
-  }, 
-  
-  function (error) {
-      alert("Scanning failed: " + error);
-  }
- );
+            localStorage.setItem("flagScan", "True");
+            localStorage.setItem("code", result.text);
+
+
+            location.reload();
+
+
+        },
+
+        function (error) {
+            alert("Scanning failed: " + error);
+        }
+    );
 }
 
-	function deconnexion()
-	{
-		localStorage.removeItem("nom");
-		localStorage.removeItem("code");
-		localStorage.removeItem("temps");
-		localStorage.removeItem("flagScan");
-		localStorage.removeItem("sucre");
-		window.location.replace("index.html");
+function deconnexion() {
+    localStorage.removeItem("nom");
+    localStorage.removeItem("code");
+    localStorage.removeItem("temps");
+    localStorage.removeItem("flagScan");
+    localStorage.removeItem("sucre");
+    localStorage.removeItem("morceaux");
+    window.location.replace("index.html");
 
-	}
-
-
+}
 
 
+function reScanBarcode(){
+    scanBarcode();
+    if (localStorage.getItem("flagScan").indexOf('True') != -1) {
 
+        localStorage.setItem("flagScan", "False");
 
+        window.location.replace("scan.html");
+
+    }
+}

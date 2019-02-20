@@ -45,7 +45,6 @@
 <script>
    
 	
-
     $("#form").submit(function (e) {
 		
 		localStorage.setItem("flagScan","False");
@@ -58,21 +57,20 @@
             data: form.serialize(), // serializes the form's elements.
             success: function (data) {
                 /*Selon data on se redérecte vers l'accueil*/
-				if(typeof JSON.parse(data) =='object')
+				
+				try
 				{
-					var obj = JSON.parse(data); 
-					
+					var obj = JSON.parse(data);
 					localStorage.setItem("nom",obj.nom);
 					localStorage.setItem("temps",obj.temps);
 					window.location.replace("accueil.html")
-				
-				
 				}
-				else
+				catch(e)
 				{
 					alert("Erreur d'authentification");
 					window.location.replace("index.html");
 				}
+				
 				
                 //if(data.localeCompare("root1234adj")==0)
             }

@@ -40,21 +40,24 @@
     </script>
 </head>
 
-<body onload="getInformation()">
+<body onload="getInformation()" style="background-color:rgb(95, 95, 98)">
     <table align="center">
-
         <tr>
-            <!-- style="width: auto;height: auto;" -->
-            <td align="center"><video id="myVideo" autoplay hidden></video></td>
-            <td align="center"><canvas id="myCanvas"></canvas></td>
+            <td align="center">
+                <video id="myVideo" autoplay hidden></video>
+            </td>
+            <td align="center">
+                <canvas id="myCanvas"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <button onclick="location.href = 'accueil.html';" type="button" class="btn btn-info" style="width: 50%;">Retour à l'accueil</button>
+            <button onclick="reScanBarcode()" type="button" class="btn btn-success" style="width: 50%;">Nouveau scan</button>
         </tr>
     </table>
 
-    <img id="sugar" width="10" height="10"
-src="img/sugar_block.png" style="display:none">
-<p id="sucre"  > </p>
-
-
+    <img id="sugar" width="10" height="10" src="img/sugar_block.png" style="display:none">
+    <p id="sucre"></p>
 
     <script>
         var video = document.getElementById("myVideo");
@@ -67,7 +70,6 @@ src="img/sugar_block.png" style="display:none">
         canvas.width = $(document).width();
         canvas.height = $(window).height();
 
-
         var ctx = canvas.getContext('2d');
         ctx.fillStyle = '#FFFFFF';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -77,13 +79,9 @@ src="img/sugar_block.png" style="display:none">
         var c_w = canvas.width / 6;
         var c_h = canvas.height / 6;
 
-
-
-
         function canvasPlayer() {
             if (myStream) {
                 ctx.drawImage(video, 0, 0);
-                //  var threshold = document.getElementById("Threshold").value;
                 var currentImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
                 var pixels = currentImage.data;
                 var n = pixels.length;
@@ -96,7 +94,7 @@ src="img/sugar_block.png" style="display:none">
                 ctx.beginPath();
                 ctx.fillStyle = "#00FFFF";
                 ctx.lineWidth = 7;
-                ctx.strokeStyle = "#7FFF00";
+                ctx.strokeStyle = "#4CAF50";
 
                 //Ligne verticale de gauche
                 ctx.moveTo(c_w, c_h);
@@ -106,7 +104,6 @@ src="img/sugar_block.png" style="display:none">
                 ctx.lineTo(c_w, c_h * 5);
                 ctx.stroke();
 
-
                 //Ligne horizontale du bas
                 ctx.moveTo(c_w, c_h * 5);
                 ctx.lineTo(c_w * 2, c_h * 5);
@@ -115,8 +112,7 @@ src="img/sugar_block.png" style="display:none">
                 ctx.lineTo(c_w * 5, c_h * 5);
                 ctx.stroke();
 
-
-                // //Ligne verticale de droite
+                //Ligne verticale de droite
                 ctx.moveTo(c_w * 5, c_h);
                 ctx.lineTo(c_w * 5, c_h * 2);
                 ctx.stroke();
@@ -124,7 +120,7 @@ src="img/sugar_block.png" style="display:none">
                 ctx.lineTo(c_w * 5, c_h * 5);
                 ctx.stroke();
 
-                // //Ligne horizontale du haut
+                //Ligne horizontale du haut
                 ctx.moveTo(c_w, c_h);
                 ctx.lineTo(c_w * 2, c_h);
                 ctx.stroke();
@@ -132,38 +128,37 @@ src="img/sugar_block.png" style="display:none">
                 ctx.lineTo(c_w * 5, c_h);
                 ctx.stroke();
 
-                var img = document.getElementById("sugar");
-                //ctx.drawImage(img, 10, 10);
-
-                drawSugar();
-
-
+                drawSugar(); //Appel de la fonction d'affichage des morceaux de sucre
             }
         }
-        function drawSugar(){
-            var img = document.getElementById("sugar");
-               
-            var sugarQuantity=localStorage.getItem("morceaux");//document.getElementById("sucre");//.innerHTML;//=	localStorage.getItem("sucre");
-            
-            var i,j;
-            var nb_max_width=Math.round((c_w * 4)/60); //nombre de sucre max a mettre par ligne
-            var offset=(c_w*4-4*60)/2;
-            var nb_max_height=Math.round((c_h * 4)/60); //nombre de lignes de sucre a afficher
-            //alert(nb_max_width);
-            //alert(nb_max_height);
-            //ctx.drawImage(img,c_w, c_h * 5-60);
 
-			if(sugarQuantity!=0)
-            for(i = 1; i <=nb_max_height; i++) {
-               for (j = 0; j <nb_max_width; j++) {
-                ctx.drawImage(img, c_w+(60*j)+offset, c_h*5-(60*i));
-                    sugarQuantity=sugarQuantity-1;
-                    if (sugarQuantity==0){
-                        return;
+        function drawSugar() {
+            var img = document.getElementById("sugar"); //Recuperation de l'image
+            var sugarQuantity = localStorage.getItem("morceaux"); //Recuperation de la quantite du sucre (en morceaux)
+            var sugarQuantity_string = sugarQuantity.toString(); //Recuperation de la quantite de sucre en chaine de caractères
+            var img_size = img.naturalWidth; //Recuperation de la taille de l'image
+            var i, j; //Variables de boucle
+            var nb_max_width = Math.round((c_w * 4) / img_size); //Nombre de sucre maximum a mettre par ligne
+            var offset_w = (c_w * 4 - nb_max_width * img_size) / 2; //Offset permettant centrer les sucres horizontalement
+            var nb_max_height = Math.round((c_h * 4) / img_size); //Nombre maximum de lignes de sucre a afficher
+            var offset_h = (c_h * 4 - nb_max_height * img_size) / 2; //Offset permettant centrer les sucres verticalement
+
+            if (sugarQuantity < (nb_max_width * nb_max_height)) { //Si la quantité de sucre à afficher peut etre comprise dans la zone d'affichage
+                for (i = 1; i <= nb_max_height; i++) { //Boucle pour chaque ligne 
+                    for (j = 0; j < nb_max_width; j++) { //Boucle pour chaque sucre
+                        if (sugarQuantity == 0) { //Si tous les sucres sont affichés alors on sort de la fonction
+                            return;
+                        }
+                        ctx.drawImage(img, c_w + (img_size * j) + offset_w, c_h * 5 - (img_size * i) + offset_h); //Affichage du sucre dans le canvas
+                        sugarQuantity = sugarQuantity - 1;
                     }
-                } 
+                }
+            } else { //Sinon on affiche le nombre de sucre en texte
+                ctx.font = "60px Arial";
+                ctx.fillStyle = "white";
+                ctx.fillText("x" + sugarQuantity_string, c_w + img_size + offset_w, c_h * 5 - 10); //Affichage du nombre de sucre en texte
+                ctx.drawImage(img, c_w + offset_w, c_h * 5 - img_size + offset_h); //Affichage d'une image de sucre avant le texte
             }
-            
         }
 
         function testVideo() {
@@ -201,7 +196,6 @@ src="img/sugar_block.png" style="display:none">
 
         function getInformation() {
             testVideo();
-
         }
     </script>
 </body>
