@@ -35,6 +35,18 @@
         <icon platform="android" qualifier="xxhdpi" src="www/res/icon/android/logo.png" />
         <icon platform="android" qualifier="xxxhdpi" src="www/res/icon/android/logo.png" />
         <icon platform="android" qualifier="fr-xxhdpi" src="www/res/icon/android/logo.png" />
+        <splash density="land-ldpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="land-mdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="land-hdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="land-xhdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="land-xxhdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="land-xxxhdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="port-ldpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="port-mdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="port-hdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="port-xhdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="port-xxhdpi" src="www/res/screen/android/logo.jpg" />
+        <splash density="port-xxxhdpi" src="www/res/screen/android/logo.jpg" />
         <preference name="DisallowOverscroll" value="true" />
         <preference name="android-minSdkVersion" value="14" />
         <preference name="orientation" value="portrait" />
