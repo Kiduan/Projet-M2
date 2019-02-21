@@ -16,8 +16,8 @@
     <form align="center" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_s-xclick">
         <input type="hidden" name="hosted_button_id" value="Z4U3X4DR6529C">
-        <input type="hidden" name="return" value="http://172.31.7.30/index.php?uc=temps">
-        <input type="hidden" name="notify_url" value="https://isen29.000webhostapp.com/v_validation_paiement.php">
+        <input type="hidden" name="custom" value="<?php echo $_SESSION['Id']; ?>">
+        <input type="hidden" name="notify_url" value="http://137.74.42.65/vues/v_validation_paiement.php">
         <table align="center">
         <tr><td><input type="hidden" name="on0" value="Achat temps">Achat de temps</td></tr><tr><td><select name="os0">
             <option value="1 mois -">1 mois - €10,00 EUR</option>

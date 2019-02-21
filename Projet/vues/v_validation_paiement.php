@@ -24,7 +24,7 @@ $payment_currency = $_POST['mc_currency'];
 $txn_id           = $_POST['txn_id'];
 $receiver_email   = $_POST['receiver_email'];
 $payer_email      = $_POST['payer_email'];
-$record_id	 	= $_POST['custom'];
+$custom 	 	  = $_POST['custom'];
 
 //$fh = fsockopen ('ssl://www.paypal.com', 443, $errno, $errstr, 30);
 $fh = fsockopen ('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
@@ -57,8 +57,8 @@ fclose ($fh);
             // On se connecte à la BDD
             try
             {
-                $host = 'mysql:host=localhost;dbname=id8785510_bdd_sucre'; 
-                $utilisateur = 'id8785510_test';
+                $host = 'mysql:host=localhost;dbname=bdd_sucre'; 
+                $utilisateur = 'test';
                 $mdp = 'isen29';
                 $connection = new PDO ( $host, $utilisateur, $mdp); 
             } catch ( Exception $e )
@@ -68,17 +68,19 @@ fclose ($fh);
             }
 
             if($payment_amount == '12.00')
-                $temps = '1';
+                $temps = '30';
             else if ($payment_amount == '30.00')
-                $temps = '3';
+                $temps = '90';
             else if ($payment_amount == '120.00')
-                $temps = '12';
+                $temps = '365';
 
             //$requete = $connection->query('UPDATE client SET temps = "12" WHERE client_id = 1');
 
             // Requête d'insertion
-            $requete = $connection->prepare('UPDATE client SET temps = :temps  WHERE client_id = 1');
+            $requete = $connection->prepare('UPDATE client SET temps = :temps  WHERE client_id = :custom');
 
-            $requete->execute( array(':temps' => $temps));
+            $requete->execute( array(
+                ':custom' => $_POST['custom'],
+                ':temps' => $temps));
         }
 ?>
