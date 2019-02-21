@@ -57,14 +57,21 @@ function scanBarcode() {
                      "Format: " + result.format + "\n" +
                      "Cancelled: " + result.cancelled);*/
 
-
+            if(result.text.length==13)
+            {
             localStorage.setItem("flagScan", "True");
             localStorage.setItem("code", result.text);
 
 
+           
+            }
+            else 
+             if (result.text.length > 0)
+             {
+                 localStorage.setItem("flagScan", "False");
+                 alert("le code barre "+result.text+" ne correspend pas au normes des codes barres, veuillez scanner le code de nouveau");
+             }
             location.reload();
-
-
         },
 
         function (error) {
@@ -97,11 +104,19 @@ function reScanBarcode() {
                      "Format: " + result.format + "\n" +
                      "Cancelled: " + result.cancelled);*/
 
-
+            if(result.text.length==13)
+            {
             localStorage.setItem("code", result.text);
             getSucre();
-
-
+            }
+            else
+              if (result.text.length > 0)
+                {
+                alert("le code barre "+result.text+" ne correspend pas au normes des codes barres, veuillez scanner le code de nouveau");
+                location.reload();
+                }
+             else
+                 location.reload();
 
 
         },
