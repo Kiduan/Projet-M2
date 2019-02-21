@@ -68,7 +68,7 @@
     <feature name="CDVOrientation">
         <param name="android-package" value="cordova.plugins.screenorientation.CDVOrientation" />
     </feature>
-    <name>Demasquer Le Sucre2</name>
+    <name>Demasquer Le Sucre</name>
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>

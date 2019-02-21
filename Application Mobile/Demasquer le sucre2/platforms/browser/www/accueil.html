@@ -7,7 +7,7 @@
     <meta name="author" content="Noureddine ADJOU" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Security -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://172.31.7.30/ ">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://137.74.42.65/ ">
 
     <!-- Title -->
     <title>Démasquer le sucre</title>
@@ -36,13 +36,13 @@
 
 
     <div class="container temps" align="center">
-         <!-- Bouton de scan on active la fonction scanBarcode() -->
+        <!-- Bouton de scan on active la fonction scanBarcode() -->
         <img src="img/barcode.png" height="200px" width="150px" onclick="scanBarcode()">
 
         <br>
         <br>
         <!--Redéraction vers le site web-->
-        <a class="btn btn-primary" href="http://172.31.7.30/" role="button">Accéder au site</a>
+        <a class="btn btn-primary" href="http://137.74.42.65/index.php" role="button">Accéder au site</a>
         <!-- Affichage du temps restant-->
         <h3 id="temps"> </h3>
         <br>
@@ -50,15 +50,15 @@
         <!-- Affichage d'un button de déconnexion -->
         <a class="btn btn-primary" role="button" onclick="deconnexion()">Déconnexion</a>
         <script>
-           /*Le message de bienvenu*/
+            /*Le message de bienvenu*/
             document.getElementById("nom").innerHTML = "Bonjour " + localStorage.getItem("nom");
-             /*Le temps restant*/
+            /*Le temps restant*/
             document.getElementById("temps").innerHTML = "Temps restant :" + localStorage.getItem("temps") + " jours";
             /*Si le flag est à True alors on scan*/
             if (localStorage.getItem("flagScan").indexOf('True') != -1) {
-                 /*On remet le flag à False*/
+                /*On remet le flag à False*/
                 localStorage.setItem("flagScan", "False");
-                 /*On se redérige vers la page de scan*/
+                /*On se redérige vers la page de scan*/
                 window.location.replace("scan.html");
 
             }

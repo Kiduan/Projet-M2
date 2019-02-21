@@ -129,7 +129,7 @@ function getSucre() {
     $.ajax({
        /*Initialisation de la requete ajax */
         type: "GET",
-        url: 'http://172.31.7.30/api/code_barre.php',
+        url: 'http://137.74.42.65/api/code_barre.php',
         data: "code=" + localStorage.getItem("code"), 
         success: function (data) {
             /*On est sensé de récupérer un objet JSON */
