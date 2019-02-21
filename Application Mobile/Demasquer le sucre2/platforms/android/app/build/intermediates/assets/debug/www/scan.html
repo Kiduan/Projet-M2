@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Noureddine ADJOU" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Debuger -->
+     <!-- Security -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; img-src  https://static.openfoodfacts.org/ 'self'; connect-src 'self' http://172.31.7.30/ ">
 
     <!-- Title -->
@@ -16,8 +16,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
     <link href="css/progress.css" rel="stylesheet" type="text/css" />
-    <!--<link href="css/progress.css" rel="stylesheet" type="text/css" />
-    <!--- -->
+    <!---JS-->
     <script type="text/javascript" src="js/jQuery.min.js"></script>
     <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="js/jquery.p2r.js"></script>
@@ -29,7 +28,7 @@
 
 
 
-    <!-- Header -->
+ <!--  on appelle la fonction  getSucre()-->
 
     <body onload="getSucre()">
         <br>
@@ -38,7 +37,8 @@
         <br>
         <br>
         <br>
-        <div class="loader"></div>
+        <!-- On attend la reponse ajax-->
+        <div class="loader" ></div>
     </body>
 
 </html>

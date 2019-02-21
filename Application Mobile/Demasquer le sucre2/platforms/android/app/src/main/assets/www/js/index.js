@@ -47,30 +47,29 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
+/*Fonction de scan des codes barres */
 function scanBarcode() {
 
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            /*   alert("We got a barcode\n" +
-                     "Result: " + result.text + "\n" +
-                     "Format: " + result.format + "\n" +
-                     "Cancelled: " + result.cancelled);*/
 
+            /*Si le resultat égal à 13 alors le code barre est correct */
             if(result.text.length==13)
             {
+            /*Nous mettons le flagScan à True */
             localStorage.setItem("flagScan", "True");
+             /*Nous récuperons  le code barre */
             localStorage.setItem("code", result.text);
-
-
-           
             }
             else 
+            /*Sinon si le code barre > 0 donc nous avons une erreur de scan */
              if (result.text.length > 0)
              {
                  localStorage.setItem("flagScan", "False");
                  alert("le code barre "+result.text+" ne correspend pas au normes des codes barres, veuillez scanner le code de nouveau");
              }
+               /* le cas code barre égal à 0 c'est le cas où on fait un retrour arriére avec la fleche sur le téléphone  */
+             /* Dans tous les cans nous alons actualiser la page avec la mis à jours de notre Flag */
             location.reload();
         },
 
@@ -79,13 +78,12 @@ function scanBarcode() {
         }
     );
 }
-
+/*La fonction de deconnexion supprime les variables globales  */
 function deconnexion() {
     localStorage.removeItem("nom");
     localStorage.removeItem("code");
     localStorage.removeItem("temps");
     localStorage.removeItem("flagScan");
-    localStorage.removeItem("sucre");
     localStorage.removeItem("morceaux");
     window.location.replace("index.html");
 
@@ -93,31 +91,30 @@ function deconnexion() {
 
 
 
-
+/*Fonction de scan à nouveau des codes barres */
 
 function reScanBarcode() {
 
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            /*   alert("We got a barcode\n" +
-                     "Result: " + result.text + "\n" +
-                     "Format: " + result.format + "\n" +
-                     "Cancelled: " + result.cancelled);*/
 
+ /*Si le resultat égal à 13 alors le code barre est correct */
             if(result.text.length==13)
             {
             localStorage.setItem("code", result.text);
             getSucre();
             }
             else
+           /*Sinon si le code barre > 0 donc nous avons une erreur de scan */
+           {
               if (result.text.length > 0)
                 {
                 alert("le code barre "+result.text+" ne correspend pas au normes des codes barres, veuillez scanner le code de nouveau");
-                location.reload();
+                
                 }
-             else
+             /* le cas code barre égal à 0 c'est le cas où on fait un retrour arriére avec la fleche sur le téléphone  */
                  location.reload();
-
+            }   
 
         },
 
@@ -127,21 +124,28 @@ function reScanBarcode() {
     );
 }
 
-
+/*Fonction qui récupère le sucre à partir de serveur */
 function getSucre() {
     $.ajax({
-
+       /*Initialisation de la requete ajax */
         type: "GET",
         url: 'http://172.31.7.30/api/code_barre.php',
         data: "code=" + localStorage.getItem("code"), 
         success: function (data) {
-            if (typeof JSON.parse(data) == 'object') {
+            /*On est sensé de récupérer un objet JSON */
+            try  {
+                /*Parse de l'objet  */
                 var obj = JSON.parse(data);
+                /*La variable globale Morceau reçoit les morceaux  */
                 localStorage.setItem("morceaux", Math.round(parseFloat(obj.morceaux)));;
+            /*Ancienne version on récupère l'url de l'image de openfoodfact  */
                 var image = obj.url;
+                /*redéraction */
                 window.location.replace("scan2.html");
-            } else
+            } catch(e)
+            {
                 alert("Le produit n'existe pas dans la base!");
+            }
         }
 
     });

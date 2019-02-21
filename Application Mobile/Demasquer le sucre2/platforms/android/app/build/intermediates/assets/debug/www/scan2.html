@@ -6,16 +6,16 @@
     <meta charset="utf-8" />
     <meta name="author" content="Noureddine ADJOU" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Debuger -->
+    <!-- Security -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; img-src * data: blob: android-webview-video-poster:; connect-src 'self' http://172.31.7.30/ ">
-    
+
     <!-- Title -->
     <title>Démasquer le sucre</title>
 
     <!-- Css Styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-    <!--- -->
+    <!---JS-->
     <script type="text/javascript" src="js/jQuery.min.js"></script>
     <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="js/jquery.p2r.js"></script>
@@ -51,12 +51,10 @@
             </td>
         </tr>
         <tr>
-            <button onclick="location.href = 'accueil.html';" type="button" class="btn btn-success btn-lg" style="width: 50%; border: 1px solid black;">Retour
-                à l'accueil</button>
-            <button onclick="reScanBarcode()" type="button" class="btn btn-success btn-lg" style="width: 50%; border: 1px solid black">Nouveau
-                scan</button>
-            <button onclick="shoot()" type="button" class="btn btn-primary btn-lg" style="width: 100%; border: 1px solid black">Demasquer
-                le sucre</button>
+            <button onclick="location.href = 'accueil.html';" type="button" class="btn btn-success btn-lg" style="width: 50%; border: 1px solid black;">Retour à l'accueil</button>
+            <button onclick="reScanBarcode()" type="button" class="btn btn-success btn-lg" style="width: 50%; border: 1px solid black">Nouveau scan
+            </button>
+            <button onclick="shoot()" type="button" class="btn btn-primary btn-lg" style="width: 100%; border: 1px solid black">Demasquer le sucre</button>
         </tr>
     </table>
 
@@ -136,8 +134,7 @@
 
                 if (flag_affiche_sucre == 1) { //Si l'utilisateur a cliqué sur 'Demasquer le sucre' alors on affiche le sucre
                     drawSugar(); //Appel de la fonction d'affichage des morceaux de sucre
-                }
-                else //Si l'utilisateur n'a pas encore cliqué sur 'Demasquer le sucre' alors on affiche les instructions
+                } else //Si l'utilisateur n'a pas encore cliqué sur 'Demasquer le sucre' alors on affiche les instructions
                 {
                     displayInstructions(); //Appel de la fonction d'afficahge des instructions
                 }
@@ -175,13 +172,13 @@
             }
         }
 
-        function displayInstructions(){ //Fonction d'affichage des instructions
-                ctx.font = "60px Arial bold";
-                ctx.fillStyle = "white";
-                ctx.fillText(" Placez le produit " , c_w, c_h * 2+60,c_w*4); 
-                ctx.fillText(" dans la cible " , c_w, c_h *2+60*2,c_w*4); 
-                ctx.fillText(" et cliquez sur " , c_w, c_h *2+60*3,c_w*4);
-                ctx.fillText(" 'Demasquer le sucre' " , c_w, c_h *2+60*4,c_w*4);
+        function displayInstructions() { //Fonction d'affichage des instructions
+            ctx.font = "60px Arial bold";
+            ctx.fillStyle = "white";
+            ctx.fillText(" Placez le produit ", c_w, c_h * 2 + 60, c_w * 4);
+            ctx.fillText(" dans la cible ", c_w, c_h * 2 + 60 * 2, c_w * 4);
+            ctx.fillText(" et cliquez sur ", c_w, c_h * 2 + 60 * 3, c_w * 4);
+            ctx.fillText(" 'Demasquer le sucre' ", c_w, c_h * 2 + 60 * 4, c_w * 4);
         }
 
         function testVideo() {
