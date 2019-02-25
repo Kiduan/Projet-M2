@@ -81,7 +81,7 @@
         var c_w = canvas.width / 6;
         var c_h = canvas.height / 6;
 
-        var flag_affiche_sucre = 0; //Flag d'affichage du sucre ou des instructions
+        localStorage.setItem("flag_affiche_sucre", 0); //Flag d'affichage du sucre ou des instructions
 
         function canvasPlayer() {
             if (myStream) {
@@ -132,7 +132,7 @@
                 ctx.lineTo(c_w * 5, c_h);
                 ctx.stroke();
 
-                if (flag_affiche_sucre == 1) { //Si l'utilisateur a cliqué sur 'Demasquer le sucre' alors on affiche le sucre
+                if (  localStorage.getItem("flag_affiche_sucre")==1) { //Si l'utilisateur a cliqué sur 'Demasquer le sucre' alors on affiche le sucre
                     drawSugar(); //Appel de la fonction d'affichage des morceaux de sucre
                 } else //Si l'utilisateur n'a pas encore cliqué sur 'Demasquer le sucre' alors on affiche les instructions
                 {
@@ -144,21 +144,36 @@
         }
 
         function drawSugar() {
+            if(localStorage.getItem("morceauxSucre")==-1) //Si l'information du nombre de sucre n'est pas la bonne alors on demande à l'utilisateur de rescanner
+            {
+                ctx.font = "60px Arial bold";
+            ctx.fillStyle = "red";
+            ctx.fillText(" Erreur de scan, ", c_w, c_h * 2 + 60, c_w * 4);
+            ctx.fillText(" veuillez cliquer   ", c_w, c_h * 2 + 60 * 2, c_w * 4);
+            ctx.fillText(" sur 'Nouveau scan' ", c_w, c_h * 2 + 60 * 3, c_w * 4);
+                return; //Et on sort de la fonction
+            }
             var img = document.getElementById("sugar"); //Recuperation de l'image
-            var sugarQuantity = localStorage.getItem("morceaux"); //Recuperation de la quantite du sucre (en morceaux)
+            var sugarQuantity = localStorage.getItem("morceauxSucre"); //Recuperation de la quantite du sucre (en morceaux)
             var sugarQuantity_string = sugarQuantity.toString(); //Recuperation de la quantite de sucre en chaine de caractères
+            var sugarQuantityTemp = sugarQuantity; //Recuperation de la quantite du sucre (en morceaux) pour faire le test si il n'y a pas de sucre
             var img_size = img.naturalWidth; //Recuperation de la taille de l'image
             var i, j; //Variables de boucle
             var nb_max_width = Math.round((c_w * 4) / img_size); //Nombre de sucre maximum a mettre par ligne
             var offset_w = (c_w * 4 - nb_max_width * img_size) / 2; //Offset permettant centrer les sucres horizontalement
             var nb_max_height = Math.round((c_h * 4) / img_size); //Nombre maximum de lignes de sucre a afficher
             var offset_h = (c_h * 4 - nb_max_height * img_size) / 2; //Offset permettant centrer les sucres verticalement
-
             if (sugarQuantity < (nb_max_width * nb_max_height)) { //Si la quantité de sucre à afficher peut etre comprise dans la zone d'affichage
                 for (i = 1; i <= nb_max_height; i++) { //Boucle pour chaque ligne 
                     for (j = 0; j < nb_max_width; j++) { //Boucle pour chaque sucre
                         if (sugarQuantity == 0) { //Si tous les sucres sont affichés alors on sort de la fonction
-                            return;
+                            if (sugarQuantityTemp == 0) { //Si il n'y a pas de sucre dans le produit scanner alors on affiche [sucre] x0 
+                                ctx.font = "60px Arial bold";
+                                ctx.fillStyle = "white";
+                                ctx.fillText("x 0", c_w + img_size + offset_w, c_h * 5 - 10); //Affichage du nombre de sucre en texte
+                                ctx.drawImage(img, c_w + offset_w, c_h * 5 - img_size + offset_h); //Affichage d'une image de sucre avant le texte
+                            }
+                            return; //On sort de la fonction
                         }
                         ctx.drawImage(img, c_w + (img_size * j) + offset_w, c_h * 5 - (img_size * i) + offset_h); //Affichage du sucre dans le canvas
                         sugarQuantity = sugarQuantity - 1;
@@ -219,7 +234,7 @@
         }
 
         function shoot() {
-            flag_affiche_sucre = 1; //Passage à 1 de la variable pour afficher le sucre
+            localStorage.setItem("flag_affiche_sucre", 1); //Passage à 1 de la variable pour afficher le sucre
             myVideo.pause(); //Mise en pause de la capture pour donner une impression de prise de photo
         }
     </script>

@@ -60,16 +60,19 @@ function scanBarcode() {
             localStorage.setItem("flagScan", "True");
              /*Nous récuperons  le code barre */
             localStorage.setItem("code", result.text);
+            
             }
             else 
             /*Sinon si le code barre > 0 donc nous avons une erreur de scan */
              if (result.text.length > 0)
              {
                  localStorage.setItem("flagScan", "False");
+                 localStorage.setItem("morceauxSucre", -1);
                  alert("le code barre "+result.text+" ne correspend pas au normes des codes barres, veuillez scanner le code de nouveau");
              }
                /* le cas code barre égal à 0 c'est le cas où on fait un retrour arriére avec la fleche sur le téléphone  */
              /* Dans tous les cans nous alons actualiser la page avec la mis à jours de notre Flag */
+            localStorage.setItem("flagAfficheSucre", 0);
             location.reload();
         },
 
@@ -84,7 +87,7 @@ function deconnexion() {
     localStorage.removeItem("code");
     localStorage.removeItem("temps");
     localStorage.removeItem("flagScan");
-    localStorage.removeItem("morceaux");
+    localStorage.removeItem("morceauxSucre");
     window.location.replace("index.html");
 
 }
@@ -109,11 +112,15 @@ function reScanBarcode() {
            {
               if (result.text.length > 0)
                 {
+               
                 alert("le code barre "+result.text+" ne correspend pas au normes des codes barres, veuillez scanner le code de nouveau");
                 
                 }
              /* le cas code barre égal à 0 c'est le cas où on fait un retrour arriére avec la fleche sur le téléphone  */
-                 location.reload();
+                localStorage.setItem("morceauxSucre", -1);
+
+                localStorage.setItem("flagAfficheSucre", 0);
+                location.reload();
             }   
 
         },
@@ -128,7 +135,7 @@ function reScanBarcode() {
 function getSucre() {
     $.ajax({
        /*Initialisation de la requete ajax */
-        type: "GET",
+        type: "POST",
         url: 'http://137.74.42.65/api/code_barre.php',
         data: "code=" + localStorage.getItem("code"), 
         success: function (data) {
@@ -137,9 +144,9 @@ function getSucre() {
                 /*Parse de l'objet  */
                 var obj = JSON.parse(data);
                 /*La variable globale Morceau reçoit les morceaux  */
-                localStorage.setItem("morceaux", Math.round(parseFloat(obj.morceaux)));;
-            /*Ancienne version on récupère l'url de l'image de openfoodfact  */
-                var image = obj.url;
+                localStorage.setItem("morceauxSucre", Math.round(parseFloat(obj.morceauxSucre)));;
+                localStorage.setItem("flagAfficheSucre", 0);
+             
                 /*redéraction */
                 window.location.replace("scan2.html");
             } catch(e)
