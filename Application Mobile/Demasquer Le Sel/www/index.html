@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+       
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Noureddine ADJOU" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://137.74.42.65/ ">
+
+    <!-- Title -->
+    <title>Démasquer le sel</title>
+
+    <!-- Css Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <!---JS-->
+    <script type="text/javascript" src="js/jQuery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="js/jquery.p2r.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
+
+
+</head>
+<body background=img/backGround.png onload="supprimeInfo()">
+<!-- Header -->
+<div class="page-header container" align="center">
+    <h1>Démasquer le sel</h1>
+</div>
+
+<div class="container" align="center">
+    <form method="post" id="form">
+        <h3>Adresse mail</h3>
+        <input type="email" name="email" id="email" class="form-control" required>
+        <h3>Mot de passe</h3>
+        <input type="password" name="mdp" id="mdp" class="form-control" required>
+        <br>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Se connecter">
+    </form>
+</div>
+
+<script>
+
+    $("#form").submit(function (e) {
+        /*Initialisation des variables globales */
+        /*flagScan est une variable Bool intialisée à False;
+         elle permet de lancé le plugin pour scanner les codes barres une
+        fois on click sur le button dans la page accueil */
+        localStorage.setItem("flagScan", "False");
+        /*récupération de l'id form*/
+        var form = $(this);
+        /*Initialisation de url avec l'attribut action*/
+        var url = form.attr('action');
+        $.ajax({
+            /*Initalisation de Ajax*/
+            type: "POST",
+            url: 'http://137.74.42.65/api/authentification.php',
+            data: form.serialize(), // serializes the form's elements.
+            success: function (data) {
+                /*Selon data on se redérecte vers l'accueil ou en reste sur la meme page*/
+
+                try {
+                    /*L'objet récupérer est de type JSON contenant le nom de l'utilisateur et le temps qui lui reste*/
+                    var obj = JSON.parse(data);
+                    localStorage.setItem("nom", obj.nom);
+                    localStorage.setItem("temps", obj.temps);
+
+                    /*Rediraction vers la page d'accueil*/
+                    window.location.replace("accueil.html");
+                } catch (e) {
+
+                    alert("Erreur d'authentification");
+
+                }
+
+
+
+            }
+        });
+        e.preventDefault();
+    });
+</script>
+</body>
+
+</html>

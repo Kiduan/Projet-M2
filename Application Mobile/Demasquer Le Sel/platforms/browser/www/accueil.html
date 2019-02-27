@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Noureddine ADJOU" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' ; media-src * ; connect-src 'self' http://137.74.42.65/ ">
+
+    <!-- Title -->
+    <title>Démasquer le sucre</title>
+
+    <!-- Css Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <!---JS-->
+    <script type="text/javascript" src="js/jQuery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="js/jquery.p2r.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
+
+</head>
+
+<!-- Header -->
+
+<body>
+
+    <div class="page-header container" align="center">
+        <!-- Affichage le message de bienvenu-->
+        <h1 id="nom"> </h1>
+    </div>
+
+
+    <div class="container temps" align="center">
+        <!-- Bouton de scan on active la fonction scanBarcode() -->
+        <img src="img/barcode.png" height="200px" width="150px" onclick="scanBarcode()">
+
+        <br>
+        <br>
+        <!--Redéraction vers le site web-->
+        <a class="btn btn-primary" href="http://137.74.42.65/index.php" role="button">Accéder au site</a>
+        <!-- Affichage du temps restant-->
+        <h3 id="temps"> </h3>
+        <br>
+        <br>
+        <!-- Affichage d'un button de déconnexion -->
+        <a class="btn btn-primary" role="button" onclick="deconnexion()">Déconnexion</a>
+        <script>
+            /*Le message de bienvenu*/
+            document.getElementById("nom").innerHTML = "Bonjour " + localStorage.getItem("nom");
+            /*Le temps restant*/
+            document.getElementById("temps").innerHTML = "Temps restant :" + localStorage.getItem("temps") + " jours";
+            /*Si le flag est à True alors on scan*/
+            if (localStorage.getItem("flagScan").indexOf('True') != -1) {
+                /*On remet le flag à False*/
+                localStorage.setItem("flagScan", "False");
+                /*On se redérige vers la page de scan*/
+                window.location.replace("scan.html");
+
+            }
+        </script>
+    </div>
+</body>
+
+</html>
