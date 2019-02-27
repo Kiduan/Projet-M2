@@ -25,7 +25,7 @@
 
 
 </head>
-<body background=img/backGround.png>
+<body background=img/backGround.png onload="supprimeInfo()">
 <!-- Header -->
 <div class="page-header container" align="center">
     <h1>Démasquer le sucre</h1>
@@ -44,6 +44,7 @@
 </div>
 
 <script>
+
     $("#form").submit(function (e) {
         /*Initialisation des variables globales */
         /*flagScan est une variable Bool intialisée à False;
@@ -67,8 +68,9 @@
                     var obj = JSON.parse(data);
                     localStorage.setItem("nom", obj.nom);
                     localStorage.setItem("temps", obj.temps);
+
                     /*Rediraction vers la page d'accueil*/
-                    window.location.replace("accueil.html")
+                    window.location.replace("accueil.html");
                 } catch (e) {
 
                     alert("Erreur d'authentification");

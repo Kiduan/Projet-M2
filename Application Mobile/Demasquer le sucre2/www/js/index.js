@@ -50,6 +50,11 @@ var app = {
 /*Fonction de scan des codes barres */
 function scanBarcode() {
 
+    if(localStorage.getItem("temps")=="0")
+    {
+        alert("Vous n'avez pas le droit de scanner, vous devez recharger votre compte");
+        return;
+    }
     cordova.plugins.barcodeScanner.scan(
         function (result) {
 
@@ -87,11 +92,26 @@ function deconnexion() {
     localStorage.removeItem("code");
     localStorage.removeItem("temps");
     localStorage.removeItem("flagScan");
+    localStorage.removeItem("flagAfficheSucre");
     localStorage.removeItem("morceauxSucre");
+    localStorage.removeItem("email");
+    localStorage.removeItem("mdp");
     window.location.replace("index.html");
 
 }
+/*La fonction qui supprime les variables globales  */
 
+function supprimeInfo() {
+
+    localStorage.removeItem("nom");
+    localStorage.removeItem("code");
+    localStorage.removeItem("temps");
+    localStorage.removeItem("flagScan");
+    localStorage.removeItem("flagAfficheSucre");
+    localStorage.removeItem("morceauxSucre");
+    localStorage.removeItem("email");
+    localStorage.removeItem("mdp");
+}
 
 
 /*Fonction de scan à nouveau des codes barres */
