@@ -88,14 +88,7 @@ function scanBarcode() {
 }
 /*La fonction de deconnexion supprime les variables globales  */
 function deconnexion() {
-    localStorage.removeItem("nom");
-    localStorage.removeItem("code");
-    localStorage.removeItem("temps");
-    localStorage.removeItem("flagScan");
-    localStorage.removeItem("flagAffichesel");
-    localStorage.removeItem("morceauxsel");
-    localStorage.removeItem("email");
-    localStorage.removeItem("mdp");
+	supprimeInfo();
     window.location.replace("index.html");
 
 }
@@ -157,20 +150,29 @@ function getsel() {
        /*Initialisation de la requete ajax */
         type: "POST",
         url: 'http://137.74.42.65/api/code_barre_sel.php',
-        data: "code=" + localStorage.getItem("code"), 
+         data: "code=" + localStorage.getItem("code") + "&email="+localStorage.getItem("email")+"&mdp="+localStorage.getItem("mdp") , 
         success: function (data) {
             /*On est sensé de récupérer un objet JSON */
             try  {
                 /*Parse de l'objet  */
                 var obj = JSON.parse(data);
                 /*La variable globale Morceau reçoit les morceaux  */
-                localStorage.setItem("morceauxsel", Math.round(parseFloat(obj.morceauxsel)));;
+                localStorage.setItem("morceauxsel", Math.round(parseFloat(obj.morceauxSel)));;
                 localStorage.setItem("flagAffichesel", 0);
              
                 /*redéraction */
                 window.location.replace("scan2.html");
             } catch(e)
             {
+                /*Si le client n'a pas de temps; le serveur nous indique ça  */
+              
+                if(data.indexOf("False_temps") =="0")
+                {
+                    alert("Vous n'avez pas le droit de scanner, vous devez recharger votre compte");
+                    window.location.replace("accueil.html");
+                    return;
+                }
+                else 
                 alert("Le produit n'existe pas dans la base!");
             }
         }

@@ -44,6 +44,8 @@
 </div>
 
 <script>
+    
+
 
     $("#form").submit(function (e) {
         /*Initialisation des variables globales */
@@ -51,6 +53,8 @@
          elle permet de lancé le plugin pour scanner les codes barres une
         fois on click sur le button dans la page accueil */
         localStorage.setItem("flagScan", "False");
+        localStorage.setItem("email",document.getElementById('email').value);
+        localStorage.setItem("mdp",document.getElementById('mdp').value);
         /*récupération de l'id form*/
         var form = $(this);
         /*Initialisation de url avec l'attribut action*/

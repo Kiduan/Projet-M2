@@ -70,10 +70,8 @@
     </feature>
     <name>Demasquer Le Sucre</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="noureddineadjou@gmail.com" href="http://phonegap.com">
     </author>
     <content src="index.html" />
     <access origin="*" />

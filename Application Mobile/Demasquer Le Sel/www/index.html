@@ -15,6 +15,14 @@
     <!-- Css Styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+	<style>
+	body { 
+		background-image: url('img/backGround.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center; 
+		}
+	</style>
     <!---JS-->
     <script type="text/javascript" src="js/jQuery.min.js"></script>
     <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
@@ -22,14 +30,15 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 
-
+	
 
 </head>
-<body background=img/backGround.png onload="supprimeInfo()">
+<body  onload="supprimeInfo()">
 <!-- Header -->
 <div class="page-header container" align="center">
     <h1>Démasquer le sel</h1>
 </div>
+
 
 <div class="container" align="center">
     <form method="post" id="form">
@@ -44,6 +53,8 @@
 </div>
 
 <script>
+    
+
 
     $("#form").submit(function (e) {
         /*Initialisation des variables globales */
@@ -51,6 +62,8 @@
          elle permet de lancé le plugin pour scanner les codes barres une
         fois on click sur le button dans la page accueil */
         localStorage.setItem("flagScan", "False");
+        localStorage.setItem("email",document.getElementById('email').value);
+        localStorage.setItem("mdp",document.getElementById('mdp').value);
         /*récupération de l'id form*/
         var form = $(this);
         /*Initialisation de url avec l'attribut action*/
